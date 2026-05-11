@@ -1,8 +1,44 @@
 #define F_CPU 16000000UL // Asegurate de que coincida con la frecuencia de tu simulación
 #include <avr/io.h>
 #include <util/delay.h>
+#include <avr/interrupt.h>
 
 #include "lcd.h"
+
+volatile uint8_t flag10ms = 0;
+
+void init_timer()
+{
+	TCCR0A |= (1 << WGM01);
+	OCR0A = (F_CPU / 1024) * 0.01;
+	TIMSK0 |= (1 << OCIE0A);
+	TCCR0B |= (1 << CS02) | (1 << CS00);
+}
+
+ISR(TIMER0_COMPA_vect) {
+	flag10ms = 1;
+}
+
+char leerTeclado()
+{
+	char mapa_teclas[4][4] = {
+		{'1', '2', '3', 'A'},
+		{'4', '5', '6', 'B'},
+		{'7', '8', '9', 'C'},
+		{'*', '0', '#', 'D'}
+	};
+	PORTB &= ~(1 << PORTB4); 
+	_delay_us(10);           
+
+	if (!(PIND & (1 << PIND3))) { PORTB |= (1 << PORTB4); return mapa_teclas[0][0]; }
+	if (!(PIND & (1 << PIND5))) { PORTB |= (1 << PORTB4); return mapa_teclas[0][1]; } 
+	if (!(PIND & (1 << PIND4))) { PORTB |= (1 << PORTB4); return mapa_teclas[0][2]; } 
+	if (!(PIND & (1 << PIND2))) { PORTB |= (1 << PORTB4); return mapa_teclas[0][3]; } 
+	
+	PORTB |= (1 << PORTB4);
+	
+	return 0;
+}
 
 void init_ports(void) {
 	// 1. Configuro los puertos para los LEDs.
@@ -42,6 +78,22 @@ void init_ports(void) {
 }
 
 int main(void) {
+	sei();
 	init_ports();
-	while (1);
+	init_timer();
+	uint8_t hola[] = "Hola";
+	LCDinit();
+	LCDGotoXY(1,1);
+	LCDstring(hola,4);
+	LCDGotoXY(2,1);
+	while (1)
+	{
+		if(flag10ms == 1)
+		{
+			flag10ms = 0;
+			char letra = leerTeclado();
+			if(letra != 0)
+				LCDsendChar(letra);
+		}
+	}
 }
