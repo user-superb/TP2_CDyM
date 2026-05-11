@@ -37,26 +37,55 @@ char leerTeclado()
 	
 	PORTB |= (1 << PORTB4);
 	
+	return 0xFF;
+}
+/********************************************************
+FUNCION PARA ESCANEAR UN TECLADO MATRICIAL Y DEVOLVER LA
+TECLA PRESIONADA UNA SOLA VEZ. TIENE DOBLE VERIFICACION Y
+MEMORIZA LA ULTIMA TECLA PRESIONADA
+DEVUELVE:
+0 -> NO HAYNUEVA TECLA PRESIONADA
+1 -> HAY NUEVA TECLA PRESIONADA Y ES *pkey
+********************************************************/
+uint8_t KEYPAD_Scan (uint8_t *pkey)
+{
+	static uint8_t Old_key, Last_valid_key=0xFF; // no hay tecla presionada;
+	uint8_t Key;
+	Key = leerTeclado(); //devuelve el char.
+	if(Key==0xFF){
+		Old_key=0xFF; // no hay tecla presionada
+		Last_valid_key=0xFF;
+		return 0;
+	}
+	if(Key==Old_key) { //2da verificación
+		if(Key!=Last_valid_key){ //evita múltiple detección
+			*pkey=Key;
+			Last_valid_key = Key;
+			return 1;
+		}
+	}
+	Old_key=Key; //1era verificación
 	return 0;
 }
+
 
 void init_ports(void) {
 	// 1. Configuro los puertos para los LEDs.
 	/* Los configuro como salida */
-	DDRB |= (1 << DDB5);
-	DDRC |= (1 << DDC4) | (1 << DDC5);
+	//DDRB |= (1 << DDB5);
+	//DDRC |= (1 << DDC4) | (1 << DDC5);
 	
 	/* Por defecto deben estar apagados */
-	PORTB &= ~(1 << PORTB5);
-	PORTC &= ~((1 << PORTC4) | (1 << PORTC5));
+	//PORTB &= ~(1 << PORTB5);
+	//PORTC &= ~((1 << PORTC4) | (1 << PORTC5));
 	
 	
 	// 2. Configuro los puertos para el DISPLAY LED
 	/* Los configuro como salida */
-	DDRC |= (1 << DDC1) | (1 << DDC2);
-	DDRB |= (1 << DDB1) | (1 << DDB2);
+	//DDRC |= (1 << DDC1) | (1 << DDC2);
+	//DDRB |= (1 << DDB1) | (1 << DDB2);
 	
-	DDRD |= (1 << DDD0) | (1 << DDD1); // E y RS
+	//DDRD |= (1 << DDD0) | (1 << DDD1); // E y RS
 	
 	
 	// 3. Configuro los puertos para la matríz de botones
@@ -79,21 +108,21 @@ void init_ports(void) {
 
 int main(void) {
 	sei();
-	init_ports();
-	init_timer();
-	uint8_t hola[] = "Hola";
 	LCDinit();
+	init_ports();
+	init_timer();	
 	LCDGotoXY(1,1);
-	LCDstring(hola,4);
-	LCDGotoXY(2,1);
+	char * pkey;
+	uint8_t flag_key;
+	LCDclr();
 	while (1)
 	{
 		if(flag10ms == 1)
 		{
-			flag10ms = 0;
-			char letra = leerTeclado();
-			if(letra != 0)
-				LCDsendChar(letra);
+			flag10ms = 0; 
+			flag_key = KEYPAD_Scan(pkey);
+			if(flag_key != 0)
+				LCDsendChar(*pkey);
 		}
 	}
 }
