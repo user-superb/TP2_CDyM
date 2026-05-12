@@ -10,4 +10,6 @@
 #define MEF_H_
 #endif /* MEF_H_ */
 void iniciarMEF();
-char * actualizarMEF(uint8_t kf, uint8_t pkey);
+//char * actualizarMEF(uint8_t kf, uint8_t pkey);
+void actualizarMEF(uint8_t kf, uint8_t pkey);
+char * actualizarSalida();

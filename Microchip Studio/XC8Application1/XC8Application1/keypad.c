@@ -7,12 +7,20 @@
 
 char leerTeclado()
 {
+	//Una matriz simple para devolver el char apropiado
 	char mapa_teclas[4][4] = {
 		{'1', '2', '3', 'A'},
 		{'4', '5', '6', 'B'},
 		{'7', '8', '9', 'C'},
 		{'*', '0', '#', 'D'}
 	};
+	
+	//Aca se va a repetir el uso del mismo codigo cuatro veces (preguntar si es posible evitar eso)
+	//Las filas estan en el Puerto B, asi que cada repeticion pone una en low haciendole un AND con PORTBX, siendo X el puerto que conecta esa fila
+	//Luego de un delay para estabilizar la señal, se hace lo siguiente:
+	//Siendo el puerto D la posicion de las columnas, si (!(PIND & (1 << PINDX))) es true, quiere decir que la posicion X esta en low, porque la tecla fue presionada
+	
+	//fila 1
 	PORTB &= ~(1 << PORTB4);
 	_delay_us(10);
 
@@ -22,6 +30,37 @@ char leerTeclado()
 	if (!(PIND & (1 << PIND2))) { PORTB |= (1 << PORTB4); return mapa_teclas[0][3]; }
 	
 	PORTB |= (1 << PORTB4);
+	//fila2
+	PORTB &= ~(1 << PORTB3);
+	_delay_us(10);
+	
+	if (!(PIND & (1 << PIND3))) { PORTB |= (1 << PORTB3); return mapa_teclas[1][0]; }
+	if (!(PIND & (1 << PIND5))) { PORTB |= (1 << PORTB3); return mapa_teclas[1][1]; }
+	if (!(PIND & (1 << PIND4))) { PORTB |= (1 << PORTB3); return mapa_teclas[1][2]; }
+	if (!(PIND & (1 << PIND2))) { PORTB |= (1 << PORTB3); return mapa_teclas[1][3]; }
+	
+	PORTB |= (1 << PORTB3);
+	//fila3
+	PORTB &= ~(1 << PORTB0);
+	_delay_us(10);
+
+	if (!(PIND & (1 << PIND3))) { PORTB |= (1 << PORTB0); return mapa_teclas[2][0]; }
+	if (!(PIND & (1 << PIND5))) { PORTB |= (1 << PORTB0); return mapa_teclas[2][1]; }
+	if (!(PIND & (1 << PIND4))) { PORTB |= (1 << PORTB0); return mapa_teclas[2][2]; }
+	if (!(PIND & (1 << PIND2))) { PORTB |= (1 << PORTB0); return mapa_teclas[2][3]; }
+	
+	PORTB |= (1 << PORTB0);
+	//fila 4
+	PORTD &= ~(1 << PORTD7);
+	_delay_us(10);
+
+	if (!(PIND & (1 << PIND3))) { PORTD |= (1 << PORTD7); return mapa_teclas[3][0]; }
+	if (!(PIND & (1 << PIND5))) { PORTD |= (1 << PORTD7); return mapa_teclas[3][1]; }
+	if (!(PIND & (1 << PIND4))) { PORTD |= (1 << PORTD7); return mapa_teclas[3][2]; }
+	if (!(PIND & (1 << PIND2))) { PORTD |= (1 << PORTD7); return mapa_teclas[3][3]; }
+	
+	PORTD |= (1 << PORTD7);
+	
 	
 	return 0xFF;
 } 

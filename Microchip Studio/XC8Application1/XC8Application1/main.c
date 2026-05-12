@@ -67,13 +67,17 @@ int main(void) {
 	{
 		if(flag10ms == 1)
 		{
-			flag10ms = 0; 
-			flag_key = KEYPAD_Scan(&pkey); //leemos la tecla presionada
-			if (flag_key) //Descartamos si se detectó la misma (debounce)
-			{
-				LCDclr(); //limpiamos la pantalla para imprimir el estado actualizado
-				LCDstring(actualizarMEF(flag_key,pkey),5); //mando la trama con la nueva información a mostrar. ActualizarMEF() devuelve un string.
-			}
+			flag10ms = 0;
+			
+			// 1. LEER ENTRADAS
+			flag_key = KEYPAD_Scan(&pkey);
+			
+			// 2. ACTUALIZAR LÓGICA (La MEF se encarga de ignorar la tecla si flag_key es 0)
+			actualizarMEF(flag_key, pkey);
+			
+			// 3. ACTUALIZAR SALIDAS (Siempre, en cada tick)
+			LCDGotoXY(1,1);
+			LCDstring(actualizarSalida(), 5);
 		}
 	}
 }
