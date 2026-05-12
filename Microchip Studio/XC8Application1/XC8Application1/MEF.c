@@ -13,6 +13,7 @@ static int clear,keypad_flag,start,stop,fin,inicioRapido,puerta;
 static char * keypad_;
 static int number;
 static int LED1,LED2,LED3;
+static uint8_t ticks;
 //var buffer
 static char keypad_out[6];
 //var contador
@@ -25,6 +26,7 @@ void iniciarMEF()
 	est_actual=INICIAL;
 	contador = 0;
 	number = 0;
+	ticks = 0;
 }
 
 //funcion MEF original aca
@@ -199,7 +201,7 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 	// 2. ACTUALIZAR ESTADOS (Limpiado de snprintf y returns)
 	switch (est_actual) {
 		case INICIAL:
-		if(inicioRapido == true) {
+		if((inicioRapido == true)|| (start)) {
 			est_actual = COCINANDO;
 			} else if(isNumber == true) {
 			est_actual = INGRESO;
@@ -226,8 +228,36 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 		break;
 		
 		case COCINANDO:
-		if (stop) est_actual = PARADO;
-		if (fin) est_actual = FIN;
+		if (stop) {est_actual = PARADO; break;}
+		if (fin) {est_actual = FIN; break;}
+			
+		ticks++;
+		if(ticks >= 100)
+		{
+			ticks = 0; // Reiniciamos para el próximo segundo
+			
+			// Desarmamos number en minutos y segundos
+			int min = number / 100;
+			int seg = number % 100;
+			
+			// Lógica de reloj
+			if (seg > 0) {
+				seg--; // Descontamos 1 segundo
+				} else { // Si los segundos son 0...
+				if (min > 0) {
+					min--;   // Bajamos un minuto
+					seg = 59; // Los segundos vuelven a 59
+				}
+			}
+			
+			// Volvemos a armar la variable number
+			number = (min * 100) + seg;
+			
+			// Si llegó a cero, terminamos
+			if (number == 0) {
+				est_actual = FIN;
+			}
+		}
 		break;
 		
 		case PARADO:
@@ -267,7 +297,7 @@ char* actualizarSalida()
 		break;
 		
 		case COCINANDO:
-		LCDGotoXY(1,1);
+		snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d", number / 100, number % 100);
 		
 		case PARADO:
 
