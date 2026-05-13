@@ -201,9 +201,13 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 	// 2. ACTUALIZAR ESTADOS (Limpiado de snprintf y returns)
 	switch (est_actual) {
 		case INICIAL:
-		if((inicioRapido == true)|| (start)) {
+		if(start) {
 			est_actual = COCINANDO;
-			} else if(isNumber == true) {
+			} else if(inicioRapido == true) {
+				number = 30;
+				est_actual = COCINANDO;
+			} 
+			else if(isNumber == true) {
 			est_actual = INGRESO;
 			contador++;
 		}
@@ -219,10 +223,23 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 				est_actual = INICIAL;
 				} else if (isNumber == true) {
 				contador++;
-				if (contador >= 5) { // Si ya metió 4 números, reseteamos (según la lógica original)
+				if (contador >= 5) { // tiene que estar en 5
 					contador = 0;
 					number = 0;
 				}
+				
+				}
+				else if(inicioRapido == true) {
+				int min = number / 100;
+				int seg = number % 100;
+				seg += 30;
+				if(seg > 59)
+				{
+					min++;
+					seg = seg - 60;
+				}
+				number = (min * 100) + seg;
+				est_actual = COCINANDO;
 			}
 		}
 		break;
@@ -230,30 +247,42 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 		case COCINANDO:
 		if (stop) {est_actual = PARADO; break;}
 		if (fin) {est_actual = FIN; break;}
+		
+		//aca actualiza por si el numero es invalido. Preferiria que se hiciera en el estado INGRESO, pero no me salio	
+		int min = number / 100;
+		int seg = number % 100;
+		
+		if(min > 59) min = 59;
+		if(seg > 59) seg = 59;
+		if(inicioRapido)
+		{
+			seg += 30;
+			if(seg > 59)
+			{
+				min++;
+				seg = seg - 60;
+			}
+		}
+		number = (min * 100) + seg;
 			
 		ticks++;
-		if(ticks >= 100)
+		if(ticks >= 100) //Como se ingresa a esta parte del codigo cada 10ms, puedo multiplicar eso por 100 y aproximar 1s
 		{
-			ticks = 0; // Reiniciamos para el próximo segundo
+			ticks = 0; 
 			
-			// Desarmamos number en minutos y segundos
-			int min = number / 100;
-			int seg = number % 100;
+			min = number / 100;
+			seg = number % 100;
 			
-			// Lógica de reloj
 			if (seg > 0) {
-				seg--; // Descontamos 1 segundo
-				} else { // Si los segundos son 0...
+				seg--; 
+				} else { 
 				if (min > 0) {
-					min--;   // Bajamos un minuto
-					seg = 59; // Los segundos vuelven a 59
+					min--;   
+					seg = 59; 
 				}
 			}
-			
-			// Volvemos a armar la variable number
 			number = (min * 100) + seg;
 			
-			// Si llegó a cero, terminamos
 			if (number == 0) {
 				est_actual = FIN;
 			}
@@ -266,6 +295,20 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 			number = 0; // Agrego esto por seguridad al limpiar
 			est_actual = INICIAL;
 		}
+		if(inicioRapido)
+		{
+			min = number / 100;
+			seg = number % 100;
+			seg += 30;
+			if(seg > 59)
+			{
+				min++;
+				seg = seg - 60;
+			}
+			number = (min * 100) + seg;
+		}
+		
+		
 		break;
 		
 		case FIN:
@@ -273,9 +316,7 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 		break;
 	}
 
-	// --- DETALLE CLAVE ---
-	// Hay que "bajar" las banderas (flags) al final del ciclo.
-	// Si no, la máquina piensa que el botón quedó apretado para siempre.
+	// bajo flags para que no se crea que el boton es eterno
 	keypad_flag = false;
 	inicioRapido = false;
 	isNumber = false;
@@ -300,11 +341,11 @@ char* actualizarSalida()
 		snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d", number / 100, number % 100);
 		
 		case PARADO:
-
+		snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d", number / 100, number % 100);
 		break;
 
 		case FIN:
-		// ...
+		snprintf(keypad_out, sizeof(keypad_out), "00:00");
 		break;
 	}
 	return keypad_out;
