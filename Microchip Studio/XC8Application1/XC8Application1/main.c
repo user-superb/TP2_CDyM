@@ -69,13 +69,13 @@ int main(void) {
 		{
 			flag10ms = 0;
 			
-			// 1. LEER ENTRADAS
+			// Leer keypad.
 			flag_key = KEYPAD_Scan(&pkey);
 			
-			// 2. ACTUALIZAR LÓGICA (La MEF se encarga de ignorar la tecla si flag_key es 0)
+			// Actualizar el estado de la máquina (La MEF se encarga de ignorar la tecla si flag_key es 0).
 			actualizarMEF(flag_key, pkey);
 			
-			// 3. ACTUALIZAR SALIDAS (Siempre, en cada tick)
+			// actualizar salidas (Siempre, en cada tick).
 			LCDGotoXY(1,1);
 			LCDstring(actualizarSalida(), 5);
 		}

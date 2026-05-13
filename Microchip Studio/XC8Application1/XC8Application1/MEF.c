@@ -10,7 +10,6 @@ ESTADO est_actual;
 //¡ENTRADAS MEF!
 static int clear,keypad_flag,start,stop,fin,inicioRapido,puerta;
 //¡SALIDAS MEF!
-static char * keypad_;
 static int number;
 static int LED1,LED2,LED3;
 static uint8_t ticks;
@@ -18,6 +17,7 @@ static uint8_t ticks;
 static char keypad_out[6];
 //var contador
 static int contador;
+static int ciclo_fin;
 //var bool
 static int isNumber;
 void iniciarMEF()
@@ -28,159 +28,9 @@ void iniciarMEF()
 	number = 0;
 	ticks = 0;
 }
-
-//funcion MEF original aca
-/*
-char * actualizarMEF(uint8_t kf, uint8_t pkey) //recibo si el usuario tocó el teclado y el char que se ingresó.
-{
-
-	//leer entradas
-	if (kf != 0)
-	{
-		keypad_flag = true;
-		switch (pkey)
-		{
-			//actualizo los flags de las entradas.
-			case('A'): //START.
-				start = true;
-				stop = false;
-				fin = false;
-				inicioRapido = false;
-				puerta = false;
-				clear = false;
-				break;
-			case('B'): //CLEAR.
-				start = false;
-				stop = true;
-				fin = false;
-				inicioRapido = false;
-				puerta = false;
-				clear = true;
-				break;
-			case('C'): //INICIO RÁPIDO.
-				start = false;
-				stop = false;
-				fin = false;
-				inicioRapido = true;
-				puerta = false;
-				clear = false;
-				break;		
-			case('D'): //PUERTA.
-				start = false;
-				stop = true;
-				fin = false;
-				inicioRapido = false;
-				puerta = false;
-				clear = false;	
-				break;
-			default: //entra acá si se presionó un número
-				isNumber = true;
-				if (pkey >= '0' && pkey <= '9')
-				{
-					number = number * 10 + (pkey - '0');
-				}
-				start = false;
-				stop = false;
-				fin = false;
-				inicioRapido = false;
-				puerta = false;
-				clear = false;				
-			break;
-				
-		}
-	}
-
-	switch (est_actual)
-	{
-		case(INICIAL):
-			snprintf(keypad_out, sizeof(keypad_out), "00:00");
-			if(inicioRapido == true)
-			{
-				est_actual = COCINANDO;
-			}
-			else
-			{			
-				if(isNumber == true)
-				{
-					est_actual = INGRESO;
-					contador++;
-					snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d", //este cacho de código debería ser una función
-					number / 100,
-					number % 100);
-					return keypad_out;
-					//hasta acá (se repite varias veces).
-				}
-				
-			}
-			return keypad_out;
-
-		break;
-		case (INGRESO):
-			if (keypad_flag == true)
-			{
-
-				if (start == true)
-				{
-					est_actual = COCINANDO;	
-				}
-				if (clear == true)
-				{
-					number = 0;
-					contador = 0;
-					est_actual = INICIAL;
-					snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d",
-					number / 100,
-					number % 100);
-					return keypad_out;
-				}
-				
-				contador++;
-				if (contador <= 4)
-				{
-					snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d",
-					number / 100,
-					number % 100);
-				}
-				else
-				{
-					contador = 0;
-					number = 0;
-				}
-				return keypad_out;		
-			}
-			break;
-			case (COCINANDO):
-			
-				if (stop)
-				{
-					est_actual = PARADO;
-				}
-				if (fin)
-				{
-					est_actual = FIN;
-				}
-			break;
-			case (PARADO):
-				if (start)
-				{
-					est_actual = COCINANDO;
-				}
-				if (clear)
-				{
-					est_actual = INICIAL;
-				}			
-			break;
-			case (FIN):
-			break;
-	}
-	
-	
-}
-*/
-
 void actualizarMEF(uint8_t kf, uint8_t pkey)
 {
-	// 1. LEER ENTRADAS (Queda exactamente igual que el de tu amigo)
+	// LEER ENTRADAS
 	if (kf != 0) {
 		keypad_flag = true;
 		switch (pkey) {
@@ -190,6 +40,8 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 			case('D'): start = false; stop = true; fin = false; inicioRapido = false; puerta = false; clear = false; isNumber = false; break;
 			default: // Número
 			isNumber = true;
+			if (est_actual == COCINANDO)
+				return;
 			if (pkey >= '0' && pkey <= '9') {
 				number = number * 10 + (pkey - '0');
 			}
@@ -198,9 +50,10 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 		}
 	}
 
-	// 2. ACTUALIZAR ESTADOS (Limpiado de snprintf y returns)
+	// ACTUALIZAR ESTADOS (Limpiado de snprintf y returns)
 	switch (est_actual) {
 		case INICIAL:
+		ciclo_fin = 0;
 		if(start) {
 			est_actual = COCINANDO;
 			} else if(inicioRapido == true) {
@@ -245,52 +98,53 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 		break;
 		
 		case COCINANDO:
-		if (stop) {est_actual = PARADO; break;}
-		if (fin) {est_actual = FIN; break;}
+			if (stop) {est_actual = PARADO; break;}
+			if (fin) {est_actual = FIN; break;}
+			//aca actualiza por si el numero es invalido. Preferiria que se hiciera en el estado INGRESO, pero no me salio	
+			int min = number / 100;
+			int seg = number % 100;
 		
-		//aca actualiza por si el numero es invalido. Preferiria que se hiciera en el estado INGRESO, pero no me salio	
-		int min = number / 100;
-		int seg = number % 100;
 		
-		if(min > 59) min = 59;
-		if(seg > 59) seg = 59;
-		if(inicioRapido)
-		{
-			seg += 30;
-			if(seg > 59)
+			if(min > 59) min = 59;
+			if(seg > 59) seg = 59;
+			if(inicioRapido)
 			{
-				min++;
-				seg = seg - 60;
-			}
-		}
-		number = (min * 100) + seg;
-			
-		ticks++;
-		if(ticks >= 100) //Como se ingresa a esta parte del codigo cada 10ms, puedo multiplicar eso por 100 y aproximar 1s
-		{
-			ticks = 0; 
-			
-			min = number / 100;
-			seg = number % 100;
-			
-			if (seg > 0) {
-				seg--; 
-				} else { 
-				if (min > 0) {
-					min--;   
-					seg = 59; 
+				seg += 30;
+				if(seg > 59)
+				{
+					min++;
+					seg = seg - 60;
 				}
 			}
 			number = (min * 100) + seg;
 			
-			if (number == 0) {
-				est_actual = FIN;
+			ticks++;
+			if(ticks >= 100) //Como se ingresa a esta parte del codigo cada 10ms, puedo multiplicar eso por 100 y aproximar 1s
+			{
+				ticks = 0; 
+			
+				min = number / 100;
+				seg = number % 100;
+			
+				if (seg > 0) {
+					seg--; 
+					} else { 
+					if (min > 0) {
+						min--;   
+						seg = 59; 
+					}
+				}
+				number = (min * 100) + seg;
+			
+				if (number == 0) {
+					est_actual = FIN;
+				}
 			}
-		}
-		break;
+			break;
 		
 		case PARADO:
 		if (start) est_actual = COCINANDO;
+		if (isNumber) est_actual = INGRESO;
 		if (clear) {
 			number = 0; // Agrego esto por seguridad al limpiar
 			est_actual = INICIAL;
@@ -312,7 +166,13 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 		break;
 		
 		case FIN:
-		// A definir lógica de salida de fin
+			if (keypad_flag || ciclo_fin == 5) {est_actual = INICIAL;}
+			if (ticks == 100){
+				ciclo_fin++;
+				ticks = 0;
+			}
+			
+			ticks++;
 		break;
 	}
 
@@ -345,7 +205,10 @@ char* actualizarSalida()
 		break;
 
 		case FIN:
-		snprintf(keypad_out, sizeof(keypad_out), "00:00");
+		if (ticks < 50)
+			snprintf(keypad_out, sizeof(keypad_out), "FIN  ");
+		else
+			snprintf(keypad_out, sizeof(keypad_out), "     ");
 		break;
 	}
 	return keypad_out;
