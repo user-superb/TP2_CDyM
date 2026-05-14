@@ -38,6 +38,8 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 			case('B'): start = false; stop = true; fin = false; inicioRapido = false; puerta = false; clear = true; isNumber = false; break;
 			case('C'): start = false; stop = false; fin = false; inicioRapido = true; puerta = false; clear = false; isNumber = false; break;
 			case('D'): start = false; stop = true; fin = false; inicioRapido = false; puerta = false; clear = false; isNumber = false; break;
+			case('*'): break;
+			case('#'): break;
 			default: // Número
 			isNumber = true;
 			if (est_actual == COCINANDO)
@@ -75,7 +77,7 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 				contador = 0;
 				est_actual = INICIAL;
 				} else if (isNumber == true) {
-				contador++;
+				if (!((number == 0) && (contador == 0))) contador++;
 				if (contador >= 5) { // tiene que estar en 5
 					contador = 0;
 					number = 0;
@@ -112,8 +114,13 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 				seg += 30;
 				if(seg > 59)
 				{
-					min++;
-					seg = seg - 60;
+					if(!(min == 59))
+					{
+						min++;
+						seg = seg - 60;
+					}
+					else
+						seg = 59;
 				}
 			}
 			number = (min * 100) + seg;
