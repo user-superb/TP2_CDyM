@@ -17,7 +17,8 @@ void init_timer()
 ISR(TIMER0_COMPA_vect) {
 	flag10ms = 1;
 }
-void init_ports(void) {
+
+void init_ports_leds(void) {
 	// 1. Configuro los puertos para los LEDs.
 	/* Los configuro como salida */
 	DDRB |= (1 << DDB5);
@@ -26,16 +27,18 @@ void init_ports(void) {
 	/* Por defecto deben estar apagados */
 	PORTB &= ~(1 << PORTB5);
 	PORTC &= ~((1 << PORTC4) | (1 << PORTC5));
-	
-	
+}
+
+void init_ports_display(void) {
 	// 2. Configuro los puertos para el DISPLAY LED
 	/* Los configuro como salida */
 	DDRC |= (1 << DDC1) | (1 << DDC2);
 	DDRB |= (1 << DDB1) | (1 << DDB2);
 	
 	DDRD |= (1 << DDD0) | (1 << DDD1); // E y RS
-	
-	
+}
+
+void init_ports_keypad(void) {
 	// 3. Configuro los puertos para la matríz de botones
 	/* Configuro los puertos PB0, PB3, PB4 y PD7 como SALIDA */
 	DDRB |= (1 << DDB0) | (1 << DDB3) | (1 << DDB4);
@@ -51,6 +54,13 @@ void init_ports(void) {
 	
 	/*Habilitar resistencias Pull-Up internas para las columnas*/
 	PORTD |= (1 << PORTD2) | (1 << PORTD3) | (1 << PORTD4) | (1 << PORTD5);
+}
+
+void init_ports(void) {
+	
+	init_ports_leds();
+	init_ports_display();
+	init_ports_keypad();
 	
 }
 int main(void) {

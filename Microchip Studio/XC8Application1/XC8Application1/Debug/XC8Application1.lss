@@ -3,35 +3,35 @@ XC8Application1.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .data         00000000  00800100  00800100  0000162d  2**0
+  0 .data         00000000  00800100  00800100  0000163f  2**0
                   ALLOC, LOAD, DATA
   1 .text         000000da  00000000  00000000  000000f4  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  2 .bss          00000001  00800100  00800100  0000162d  2**0
+  2 .bss          00000001  00800100  00800100  0000163f  2**0
                   ALLOC
-  3 .comment      0000005b  00000000  00000000  0000162d  2**0
+  3 .comment      0000005b  00000000  00000000  0000163f  2**0
                   CONTENTS, READONLY
-  4 .debug_aranges 00000150  00000000  00000000  00001688  2**0
+  4 .debug_aranges 00000168  00000000  00000000  0000169a  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   0000225e  00000000  00000000  000017d8  2**0
+  5 .debug_info   000022eb  00000000  00000000  00001802  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 00000b7c  00000000  00000000  00003a36  2**0
+  6 .debug_abbrev 00000b96  00000000  00000000  00003aed  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   00000f2e  00000000  00000000  000045b2  2**0
+  7 .debug_line   00000f71  00000000  00000000  00004683  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  00000398  00000000  00000000  000054e0  2**2
+  8 .debug_frame  000003c8  00000000  00000000  000055f4  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    0000028a  00000000  00000000  00005878  2**0
+  9 .debug_str    0000028a  00000000  00000000  000059bc  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    00001369  00000000  00000000  00005b02  2**0
+ 10 .debug_loc    00001369  00000000  00000000  00005c46  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000110  00000000  00000000  00006e6b  2**0
+ 11 .debug_ranges 00000128  00000000  00000000  00006faf  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .text         00000004  00001524  00001524  00001618  2**1
+ 12 .text         00000004  00001536  00001536  0000162a  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 13 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00006f7c  2**2
+ 13 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000070d8  2**2
                   CONTENTS, READONLY, DEBUGGING
- 14 .text.iniciarMEF 0000001a  00001502  00001502  000015f6  2**1
+ 14 .text.iniciarMEF 0000001a  000014d8  000014d8  000015cc  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
  15 .text.actualizarMEF 000004ee  00000136  00000136  0000022a  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
@@ -39,49 +39,49 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, PROGMEMX
  17 .text.actualizarSalida 00000140  00000bd6  00000bd6  00000cca  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 18 .bss.isNumber 00000002  00800117  00800117  0000162d  2**0
+ 18 .bss.isNumber 00000002  00800117  00800117  0000163f  2**0
                   ALLOC
- 19 .bss.ciclo_fin 00000002  00800119  00800119  0000162d  2**0
+ 19 .bss.ciclo_fin 00000002  00800119  00800119  0000163f  2**0
                   ALLOC
- 20 .bss.contador 00000002  0080011b  0080011b  0000162d  2**0
+ 20 .bss.contador 00000002  0080011b  0080011b  0000163f  2**0
                   ALLOC
- 21 .bss.keypad_out 00000006  00800111  00800111  0000162d  2**0
+ 21 .bss.keypad_out 00000006  00800111  00800111  0000163f  2**0
                   ALLOC
- 22 .bss.ticks    00000001  0080012b  0080012b  0000162d  2**0
+ 22 .bss.ticks    00000001  0080012b  0080012b  0000163f  2**0
                   ALLOC
- 23 .bss.number   00000002  0080011d  0080011d  0000162d  2**0
+ 23 .bss.number   00000002  0080011d  0080011d  0000163f  2**0
                   ALLOC
- 24 .bss.inicioRapido 00000002  0080011f  0080011f  0000162d  2**0
+ 24 .bss.inicioRapido 00000002  0080011f  0080011f  0000163f  2**0
                   ALLOC
- 25 .bss.fin      00000002  00800121  00800121  0000162d  2**0
+ 25 .bss.fin      00000002  00800121  00800121  0000163f  2**0
                   ALLOC
- 26 .bss.stop     00000002  00800123  00800123  0000162d  2**0
+ 26 .bss.stop     00000002  00800123  00800123  0000163f  2**0
                   ALLOC
- 27 .bss.start    00000002  00800125  00800125  0000162d  2**0
+ 27 .bss.start    00000002  00800125  00800125  0000163f  2**0
                   ALLOC
- 28 .bss.keypad_flag 00000002  00800127  00800127  0000162d  2**0
+ 28 .bss.keypad_flag 00000002  00800127  00800127  0000163f  2**0
                   ALLOC
- 29 .bss.clear    00000002  00800129  00800129  0000162d  2**0
+ 29 .bss.clear    00000002  00800129  00800129  0000163f  2**0
                   ALLOC
- 30 .rodata       00000010  00800101  00001528  0000161c  2**0
+ 30 .rodata       00000010  00800101  0000153a  0000162e  2**0
                   CONTENTS, ALLOC, LOAD, DATA
  31 .text.leerTeclado 0000016a  00000a6c  00000a6c  00000b60  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 32 .text.KEYPAD_Scan 00000040  00001314  00001314  00001408  2**1
+ 32 .text.KEYPAD_Scan 00000040  000012c4  000012c4  000013b8  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 33 .data.Last_valid_key.1738 00000001  0080012c  00001538  0000162c  2**0
+ 33 .data.Last_valid_key.1738 00000001  0080012c  0000154a  0000163e  2**0
                   CONTENTS, ALLOC, LOAD, DATA
- 34 .bss.Old_key.1737 00000001  0080012d  0080012d  0000162d  2**0
+ 34 .bss.Old_key.1737 00000001  0080012d  0080012d  0000163f  2**0
                   ALLOC
  35 .text.LCDsendChar 00000130  00000d16  00000d16  00000e0a  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
  36 .text.LCDsendCommand 00000128  00000e46  00000e46  00000f3a  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 37 .text.LCDclr  00000008  0000151c  0000151c  00001610  2**1
+ 37 .text.LCDclr  00000008  0000152e  0000152e  00001622  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 38 .text.LCDstring 00000030  0000142a  0000142a  0000151e  2**1
+ 38 .text.LCDstring 00000030  000013da  000013da  000014ce  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 39 .text.LCDGotoXY 0000001e  000014aa  000014aa  0000159e  2**1
+ 39 .text.LCDGotoXY 0000001e  00001480  00001480  00001574  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
  40 .text.LCDdefinechar 0000006a  000011a2  000011a2  00001296  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
@@ -89,66 +89,72 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
  42 .progmemx.data.LcdCustomChar 00000040  000000da  000000da  000001ce  2**0
                   CONTENTS, ALLOC, LOAD, READONLY, PROGMEMX
- 43 .text.init_timer 0000001c  000014e6  000014e6  000015da  2**1
+ 43 .text.init_timer 0000001c  000014bc  000014bc  000015b0  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 44 .text.__vector_14 0000001e  000014c8  000014c8  000015bc  2**1
+ 44 .text.__vector_14 0000001e  0000149e  0000149e  00001592  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 45 .text.init_ports 00000050  000012c4  000012c4  000013b8  2**1
+ 45 .text.init_ports_leds 0000001a  000014f2  000014f2  000015e6  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 46 .text.main    00000056  0000126e  0000126e  00001362  2**1
+ 46 .text.init_ports_display 00000014  0000150c  0000150c  00001600  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 47 .bss.flag10ms 00000001  0080012e  0080012e  0000162d  2**0
+ 47 .text.init_ports_keypad 00000026  0000145a  0000145a  0000154e  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 48 .text.init_ports 0000000e  00001520  00001520  00001614  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 49 .text.main    00000056  0000126e  0000126e  00001362  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+ 50 .bss.flag10ms 00000001  0080012e  0080012e  0000163f  2**0
                   ALLOC
- 48 .text.libgcc.div 00000028  0000145a  0000145a  0000154e  2**1
+ 51 .text.libgcc.div 00000028  0000140a  0000140a  000014fe  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 49 .text.libgcc.div 00000028  00001482  00001482  00001576  2**1
+ 52 .text.libgcc.div 00000028  00001432  00001432  00001526  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 50 .text.avrlibc 00000032  000013f8  000013f8  000014ec  2**1
+ 53 .text.avrlibc 00000032  000013a8  000013a8  0000149c  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 51 .text.avrlibc 00000062  0000120c  0000120c  00001300  2**1
+ 54 .text.avrlibc 00000062  0000120c  0000120c  00001300  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 52 .text.avrlibc 00000448  00000624  00000624  00000718  2**1
+ 55 .text.avrlibc 00000448  00000624  00000624  00000718  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 53 .text.avrlibc 00000036  0000138c  0000138c  00001480  2**1
+ 56 .text.avrlibc 00000036  0000133c  0000133c  00001430  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 54 .text.avrlibc 00000078  0000112a  0000112a  0000121e  2**1
+ 57 .text.avrlibc 00000078  0000112a  0000112a  0000121e  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 55 .text.avrlibc 000000bc  0000106e  0000106e  00001162  2**1
+ 58 .text.avrlibc 000000bc  0000106e  0000106e  00001162  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 56 .text.libgcc.prologue 00000038  00001354  00001354  00001448  2**1
+ 59 .text.libgcc.prologue 00000038  00001304  00001304  000013f8  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 57 .text.libgcc.prologue 00000036  000013c2  000013c2  000014b6  2**1
+ 60 .text.libgcc.prologue 00000036  00001372  00001372  00001466  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
    0:	0c 94 43 00 	jmp	0x86	; 0x86 <__ctors_end>
-   4:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-   8:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-   c:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  10:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  14:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  18:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  1c:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  20:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  24:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  28:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  2c:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  30:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  34:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  38:	0c 94 64 0a 	jmp	0x14c8	; 0x14c8 <__vector_14>
-  3c:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  40:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  44:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  48:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  4c:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  50:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  54:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  58:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  5c:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  60:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
-  64:	0c 94 92 0a 	jmp	0x1524	; 0x1524 <__bad_interrupt>
+   4:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+   8:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+   c:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  10:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  14:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  18:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  1c:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  20:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  24:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  28:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  2c:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  30:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  34:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  38:	0c 94 4f 0a 	jmp	0x149e	; 0x149e <__vector_14>
+  3c:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  40:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  44:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  48:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  4c:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  50:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  54:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  58:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  5c:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  60:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
+  64:	0c 94 9b 0a 	jmp	0x1536	; 0x1536 <__bad_interrupt>
 
 00000068 <.dinit>:
   68:	01 00       	.word	0x0001	; ????
@@ -156,13 +162,13 @@ Disassembly of section .text:
   6c:	80 01       	movw	r16, r0
   6e:	01 01       	movw	r0, r2
   70:	11 00       	.word	0x0011	; ????
-  72:	15 28       	or	r1, r5
+  72:	15 3a       	cpi	r17, 0xA5	; 165
   74:	01 11       	cpse	r16, r1
   76:	01 2c       	mov	r0, r1
   78:	80 01       	movw	r16, r0
   7a:	2c 01       	movw	r4, r24
   7c:	2d 00       	.word	0x002d	; ????
-  7e:	15 38       	cpi	r17, 0x85	; 133
+  7e:	15 4a       	sbci	r17, 0xA5	; 165
   80:	01 2d       	mov	r16, r1
   82:	01 2f       	mov	r16, r17
   84:	80 00       	.word	0x0080	; ????
@@ -219,46 +225,30 @@ Disassembly of section .text:
 
 Disassembly of section .text:
 
-00001524 <__bad_interrupt>:
-    1524:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
+00001536 <__bad_interrupt>:
+    1536:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
 
 Disassembly of section .text.iniciarMEF:
 
-00001502 <iniciarMEF>:
-//var bool
-static int isNumber;
-void iniciarMEF()
-{
-	
-	est_actual=INICIAL;
-    1502:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__DATA_REGION_ORIGIN__>
-	contador = 0;
-    1506:	10 92 1c 01 	sts	0x011C, r1	; 0x80011c <contador+0x1>
-    150a:	10 92 1b 01 	sts	0x011B, r1	; 0x80011b <contador>
-	number = 0;
-    150e:	10 92 1e 01 	sts	0x011E, r1	; 0x80011e <number+0x1>
-    1512:	10 92 1d 01 	sts	0x011D, r1	; 0x80011d <number>
-	ticks = 0;
-    1516:	10 92 2b 01 	sts	0x012B, r1	; 0x80012b <ticks>
-    151a:	08 95       	ret
+000014d8 <iniciarMEF>:
+    14d8:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__DATA_REGION_ORIGIN__>
+    14dc:	10 92 1c 01 	sts	0x011C, r1	; 0x80011c <contador+0x1>
+    14e0:	10 92 1b 01 	sts	0x011B, r1	; 0x80011b <contador>
+    14e4:	10 92 1e 01 	sts	0x011E, r1	; 0x80011e <number+0x1>
+    14e8:	10 92 1d 01 	sts	0x011D, r1	; 0x80011d <number>
+    14ec:	10 92 2b 01 	sts	0x012B, r1	; 0x80012b <ticks>
+    14f0:	08 95       	ret
 
 Disassembly of section .text.actualizarMEF:
 
 00000136 <actualizarMEF>:
-}
-void actualizarMEF(uint8_t kf, uint8_t pkey)
-{
-	// LEER ENTRADAS
-	if (kf != 0) {
  136:	88 23       	and	r24, r24
  138:	09 f4       	brne	.+2      	; 0x13c <actualizarMEF+0x6>
  13a:	be c0       	rjmp	.+380    	; 0x2b8 <actualizarMEF+0x182>
-		keypad_flag = true;
  13c:	81 e0       	ldi	r24, 0x01	; 1
  13e:	90 e0       	ldi	r25, 0x00	; 0
  140:	90 93 28 01 	sts	0x0128, r25	; 0x800128 <keypad_flag+0x1>
  144:	80 93 27 01 	sts	0x0127, r24	; 0x800127 <keypad_flag>
-		switch (pkey) {
  148:	61 34       	cpi	r22, 0x41	; 65
  14a:	79 f0       	breq	.+30     	; 0x16a <actualizarMEF+0x34>
  14c:	38 f4       	brcc	.+14     	; 0x15c <actualizarMEF+0x26>
@@ -276,7 +266,6 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
  164:	09 f4       	brne	.+2      	; 0x168 <actualizarMEF+0x32>
  166:	52 c0       	rjmp	.+164    	; 0x20c <actualizarMEF+0xd6>
  168:	6c c0       	rjmp	.+216    	; 0x242 <actualizarMEF+0x10c>
-			case('A'): start = true; stop = false; fin = false; inicioRapido = false; puerta = false; clear = false; isNumber = false; break;
  16a:	81 e0       	ldi	r24, 0x01	; 1
  16c:	90 e0       	ldi	r25, 0x00	; 0
  16e:	90 93 26 01 	sts	0x0126, r25	; 0x800126 <start+0x1>
@@ -292,7 +281,6 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
  196:	10 92 18 01 	sts	0x0118, r1	; 0x800118 <isNumber+0x1>
  19a:	10 92 17 01 	sts	0x0117, r1	; 0x800117 <isNumber>
  19e:	8c c0       	rjmp	.+280    	; 0x2b8 <actualizarMEF+0x182>
-			case('B'): start = false; stop = true; fin = false; inicioRapido = false; puerta = false; clear = true; isNumber = false; break;
  1a0:	10 92 26 01 	sts	0x0126, r1	; 0x800126 <start+0x1>
  1a4:	10 92 25 01 	sts	0x0125, r1	; 0x800125 <start>
  1a8:	81 e0       	ldi	r24, 0x01	; 1
@@ -308,7 +296,6 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
  1cc:	10 92 18 01 	sts	0x0118, r1	; 0x800118 <isNumber+0x1>
  1d0:	10 92 17 01 	sts	0x0117, r1	; 0x800117 <isNumber>
  1d4:	71 c0       	rjmp	.+226    	; 0x2b8 <actualizarMEF+0x182>
-			case('C'): start = false; stop = false; fin = false; inicioRapido = true; puerta = false; clear = false; isNumber = false; break;
  1d6:	10 92 26 01 	sts	0x0126, r1	; 0x800126 <start+0x1>
  1da:	10 92 25 01 	sts	0x0125, r1	; 0x800125 <start>
  1de:	10 92 24 01 	sts	0x0124, r1	; 0x800124 <stop+0x1>
@@ -324,7 +311,6 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
  202:	10 92 18 01 	sts	0x0118, r1	; 0x800118 <isNumber+0x1>
  206:	10 92 17 01 	sts	0x0117, r1	; 0x800117 <isNumber>
  20a:	56 c0       	rjmp	.+172    	; 0x2b8 <actualizarMEF+0x182>
-			case('D'): start = false; stop = true; fin = false; inicioRapido = false; puerta = false; clear = false; isNumber = false; break;
  20c:	10 92 26 01 	sts	0x0126, r1	; 0x800126 <start+0x1>
  210:	10 92 25 01 	sts	0x0125, r1	; 0x800125 <start>
  214:	81 e0       	ldi	r24, 0x01	; 1
@@ -340,26 +326,18 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
  238:	10 92 18 01 	sts	0x0118, r1	; 0x800118 <isNumber+0x1>
  23c:	10 92 17 01 	sts	0x0117, r1	; 0x800117 <isNumber>
  240:	3b c0       	rjmp	.+118    	; 0x2b8 <actualizarMEF+0x182>
-			case('*'): break;
-			case('#'): break;
-			default: // Número
-			isNumber = true;
  242:	81 e0       	ldi	r24, 0x01	; 1
  244:	90 e0       	ldi	r25, 0x00	; 0
  246:	90 93 18 01 	sts	0x0118, r25	; 0x800118 <isNumber+0x1>
  24a:	80 93 17 01 	sts	0x0117, r24	; 0x800117 <isNumber>
-			if (est_actual == COCINANDO)
  24e:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
  252:	82 30       	cpi	r24, 0x02	; 2
  254:	09 f4       	brne	.+2      	; 0x258 <actualizarMEF+0x122>
  256:	e5 c1       	rjmp	.+970    	; 0x622 <__EEPROM_REGION_LENGTH__+0x222>
-				return;
-			if (pkey >= '0' && pkey <= '9') {
  258:	80 ed       	ldi	r24, 0xD0	; 208
  25a:	86 0f       	add	r24, r22
  25c:	8a 30       	cpi	r24, 0x0A	; 10
  25e:	c0 f4       	brcc	.+48     	; 0x290 <actualizarMEF+0x15a>
-				number = number * 10 + (pkey - '0');
  260:	80 91 1d 01 	lds	r24, 0x011D	; 0x80011d <number>
  264:	90 91 1e 01 	lds	r25, 0x011E	; 0x80011e <number+0x1>
  268:	9c 01       	movw	r18, r24
@@ -380,8 +358,6 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
  286:	79 1f       	adc	r23, r25
  288:	70 93 1e 01 	sts	0x011E, r23	; 0x80011e <number+0x1>
  28c:	60 93 1d 01 	sts	0x011D, r22	; 0x80011d <number>
-			}
-			start = false; stop = false; fin = false; inicioRapido = false; puerta = false; clear = false;
  290:	10 92 26 01 	sts	0x0126, r1	; 0x800126 <start+0x1>
  294:	10 92 25 01 	sts	0x0125, r1	; 0x800125 <start>
  298:	10 92 24 01 	sts	0x0124, r1	; 0x800124 <stop+0x1>
@@ -392,12 +368,6 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
  2ac:	10 92 1f 01 	sts	0x011F, r1	; 0x80011f <inicioRapido>
  2b0:	10 92 2a 01 	sts	0x012A, r1	; 0x80012a <clear+0x1>
  2b4:	10 92 29 01 	sts	0x0129, r1	; 0x800129 <clear>
-			break;
-		}
-	}
-
-	// ACTUALIZAR ESTADOS (Limpiado de snprintf y returns)
-	switch (est_actual) {
  2b8:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
  2bc:	82 30       	cpi	r24, 0x02	; 2
  2be:	09 f4       	brne	.+2      	; 0x2c2 <actualizarMEF+0x18c>
@@ -415,89 +385,65 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
  2d6:	09 f4       	brne	.+2      	; 0x2da <actualizarMEF+0x1a4>
  2d8:	6a c1       	rjmp	.+724    	; 0x5ae <__EEPROM_REGION_LENGTH__+0x1ae>
  2da:	8b c1       	rjmp	.+790    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-		case INICIAL:
-		ciclo_fin = 0;
  2dc:	10 92 1a 01 	sts	0x011A, r1	; 0x80011a <ciclo_fin+0x1>
  2e0:	10 92 19 01 	sts	0x0119, r1	; 0x800119 <ciclo_fin>
-		if(start) {
  2e4:	80 91 25 01 	lds	r24, 0x0125	; 0x800125 <start>
  2e8:	90 91 26 01 	lds	r25, 0x0126	; 0x800126 <start+0x1>
  2ec:	89 2b       	or	r24, r25
  2ee:	21 f0       	breq	.+8      	; 0x2f8 <actualizarMEF+0x1c2>
-			est_actual = COCINANDO;
  2f0:	82 e0       	ldi	r24, 0x02	; 2
  2f2:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
  2f6:	7d c1       	rjmp	.+762    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-			} else if(inicioRapido == true) {
  2f8:	80 91 1f 01 	lds	r24, 0x011F	; 0x80011f <inicioRapido>
  2fc:	90 91 20 01 	lds	r25, 0x0120	; 0x800120 <inicioRapido+0x1>
  300:	01 97       	sbiw	r24, 0x01	; 1
  302:	51 f4       	brne	.+20     	; 0x318 <actualizarMEF+0x1e2>
-				number = 30;
  304:	8e e1       	ldi	r24, 0x1E	; 30
  306:	90 e0       	ldi	r25, 0x00	; 0
  308:	90 93 1e 01 	sts	0x011E, r25	; 0x80011e <number+0x1>
  30c:	80 93 1d 01 	sts	0x011D, r24	; 0x80011d <number>
-				est_actual = COCINANDO;
  310:	82 e0       	ldi	r24, 0x02	; 2
  312:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
  316:	6d c1       	rjmp	.+730    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-			} 
-			else if(isNumber == true) {
  318:	80 91 17 01 	lds	r24, 0x0117	; 0x800117 <isNumber>
  31c:	90 91 18 01 	lds	r25, 0x0118	; 0x800118 <isNumber+0x1>
  320:	01 97       	sbiw	r24, 0x01	; 1
  322:	09 f0       	breq	.+2      	; 0x326 <actualizarMEF+0x1f0>
  324:	66 c1       	rjmp	.+716    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-			est_actual = INGRESO;
  326:	81 e0       	ldi	r24, 0x01	; 1
  328:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
-			contador++;
  32c:	80 91 1b 01 	lds	r24, 0x011B	; 0x80011b <contador>
  330:	90 91 1c 01 	lds	r25, 0x011C	; 0x80011c <contador+0x1>
  334:	01 96       	adiw	r24, 0x01	; 1
  336:	90 93 1c 01 	sts	0x011C, r25	; 0x80011c <contador+0x1>
  33a:	80 93 1b 01 	sts	0x011B, r24	; 0x80011b <contador>
  33e:	59 c1       	rjmp	.+690    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-		}
-		break;
-		
-		case INGRESO:
-		if (keypad_flag == true) {
  340:	80 91 27 01 	lds	r24, 0x0127	; 0x800127 <keypad_flag>
  344:	90 91 28 01 	lds	r25, 0x0128	; 0x800128 <keypad_flag+0x1>
  348:	01 97       	sbiw	r24, 0x01	; 1
  34a:	09 f0       	breq	.+2      	; 0x34e <actualizarMEF+0x218>
  34c:	52 c1       	rjmp	.+676    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-			if (start == true) {
  34e:	80 91 25 01 	lds	r24, 0x0125	; 0x800125 <start>
  352:	90 91 26 01 	lds	r25, 0x0126	; 0x800126 <start+0x1>
  356:	01 97       	sbiw	r24, 0x01	; 1
  358:	21 f4       	brne	.+8      	; 0x362 <actualizarMEF+0x22c>
-				est_actual = COCINANDO;
  35a:	82 e0       	ldi	r24, 0x02	; 2
  35c:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
  360:	48 c1       	rjmp	.+656    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-				} else if (clear == true) {
  362:	80 91 29 01 	lds	r24, 0x0129	; 0x800129 <clear>
  366:	90 91 2a 01 	lds	r25, 0x012A	; 0x80012a <clear+0x1>
  36a:	01 97       	sbiw	r24, 0x01	; 1
  36c:	59 f4       	brne	.+22     	; 0x384 <actualizarMEF+0x24e>
-				number = 0;
  36e:	10 92 1e 01 	sts	0x011E, r1	; 0x80011e <number+0x1>
  372:	10 92 1d 01 	sts	0x011D, r1	; 0x80011d <number>
-				contador = 0;
  376:	10 92 1c 01 	sts	0x011C, r1	; 0x80011c <contador+0x1>
  37a:	10 92 1b 01 	sts	0x011B, r1	; 0x80011b <contador>
-				est_actual = INICIAL;
  37e:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__DATA_REGION_ORIGIN__>
  382:	37 c1       	rjmp	.+622    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-				} else if (isNumber == true) {
  384:	80 91 17 01 	lds	r24, 0x0117	; 0x800117 <isNumber>
  388:	90 91 18 01 	lds	r25, 0x0118	; 0x800118 <isNumber+0x1>
  38c:	01 97       	sbiw	r24, 0x01	; 1
  38e:	29 f5       	brne	.+74     	; 0x3da <actualizarMEF+0x2a4>
-				if (!((number == 0) && (contador == 0))) contador++;
  390:	80 91 1d 01 	lds	r24, 0x011D	; 0x80011d <number>
  394:	90 91 1e 01 	lds	r25, 0x011E	; 0x80011e <number+0x1>
  398:	89 2b       	or	r24, r25
@@ -511,53 +457,37 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
  3b0:	01 96       	adiw	r24, 0x01	; 1
  3b2:	90 93 1c 01 	sts	0x011C, r25	; 0x80011c <contador+0x1>
  3b6:	80 93 1b 01 	sts	0x011B, r24	; 0x80011b <contador>
-				if (contador >= 5) { // tiene que estar en 5
  3ba:	80 91 1b 01 	lds	r24, 0x011B	; 0x80011b <contador>
  3be:	90 91 1c 01 	lds	r25, 0x011C	; 0x80011c <contador+0x1>
  3c2:	05 97       	sbiw	r24, 0x05	; 5
  3c4:	0c f4       	brge	.+2      	; 0x3c8 <actualizarMEF+0x292>
  3c6:	15 c1       	rjmp	.+554    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-					contador = 0;
  3c8:	10 92 1c 01 	sts	0x011C, r1	; 0x80011c <contador+0x1>
  3cc:	10 92 1b 01 	sts	0x011B, r1	; 0x80011b <contador>
-					number = 0;
  3d0:	10 92 1e 01 	sts	0x011E, r1	; 0x80011e <number+0x1>
  3d4:	10 92 1d 01 	sts	0x011D, r1	; 0x80011d <number>
  3d8:	0c c1       	rjmp	.+536    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-				}
-				
-				}
-				else if(inicioRapido == true) {
  3da:	80 91 1f 01 	lds	r24, 0x011F	; 0x80011f <inicioRapido>
  3de:	90 91 20 01 	lds	r25, 0x0120	; 0x800120 <inicioRapido+0x1>
  3e2:	01 97       	sbiw	r24, 0x01	; 1
  3e4:	09 f0       	breq	.+2      	; 0x3e8 <actualizarMEF+0x2b2>
  3e6:	05 c1       	rjmp	.+522    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-				int min = number / 100;
  3e8:	80 91 1d 01 	lds	r24, 0x011D	; 0x80011d <number>
  3ec:	90 91 1e 01 	lds	r25, 0x011E	; 0x80011e <number+0x1>
  3f0:	64 e6       	ldi	r22, 0x64	; 100
  3f2:	70 e0       	ldi	r23, 0x00	; 0
- 3f4:	0e 94 2d 0a 	call	0x145a	; 0x145a <__divmodhi4>
+ 3f4:	0e 94 05 0a 	call	0x140a	; 0x140a <__divmodhi4>
  3f8:	ab 01       	movw	r20, r22
-				int seg = number % 100;
-				seg += 30;
  3fa:	9c 01       	movw	r18, r24
  3fc:	22 5e       	subi	r18, 0xE2	; 226
  3fe:	3f 4f       	sbci	r19, 0xFF	; 255
-				if(seg > 59)
  400:	2c 33       	cpi	r18, 0x3C	; 60
  402:	31 05       	cpc	r19, r1
  404:	24 f0       	brlt	.+8      	; 0x40e <__EEPROM_REGION_LENGTH__+0xe>
-				{
-					min++;
  406:	4f 5f       	subi	r20, 0xFF	; 255
  408:	5f 4f       	sbci	r21, 0xFF	; 255
-					seg = seg - 60;
  40a:	2c 53       	subi	r18, 0x3C	; 60
  40c:	31 09       	sbc	r19, r1
-				}
-				number = (min * 100) + seg;
  40e:	64 e6       	ldi	r22, 0x64	; 100
  410:	64 9f       	mul	r22, r20
  412:	c0 01       	movw	r24, r0
@@ -568,16 +498,9 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
  41c:	93 1f       	adc	r25, r19
  41e:	90 93 1e 01 	sts	0x011E, r25	; 0x80011e <number+0x1>
  422:	80 93 1d 01 	sts	0x011D, r24	; 0x80011d <number>
-				est_actual = COCINANDO;
  426:	82 e0       	ldi	r24, 0x02	; 2
  428:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
  42c:	e2 c0       	rjmp	.+452    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-			}
-		}
-		break;
-		
-		case COCINANDO:
-			if (stop) {est_actual = PARADO; break;}
  42e:	80 91 23 01 	lds	r24, 0x0123	; 0x800123 <stop>
  432:	90 91 24 01 	lds	r25, 0x0124	; 0x800124 <stop+0x1>
  436:	89 2b       	or	r24, r25
@@ -585,7 +508,6 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
  43a:	83 e0       	ldi	r24, 0x03	; 3
  43c:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
  440:	d8 c0       	rjmp	.+432    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-			if (fin) {est_actual = FIN; break;}
  442:	80 91 21 01 	lds	r24, 0x0121	; 0x800121 <fin>
  446:	90 91 22 01 	lds	r25, 0x0122	; 0x800122 <fin+0x1>
  44a:	89 2b       	or	r24, r25
@@ -593,73 +515,42 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
  44e:	84 e0       	ldi	r24, 0x04	; 4
  450:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
  454:	ce c0       	rjmp	.+412    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-			//aca actualiza por si el numero es invalido. Preferiria que se hiciera en el estado INGRESO, pero no me salio	
-			int min = number / 100;
  456:	80 91 1d 01 	lds	r24, 0x011D	; 0x80011d <number>
  45a:	90 91 1e 01 	lds	r25, 0x011E	; 0x80011e <number+0x1>
-			int seg = number % 100;
  45e:	64 e6       	ldi	r22, 0x64	; 100
  460:	70 e0       	ldi	r23, 0x00	; 0
- 462:	0e 94 2d 0a 	call	0x145a	; 0x145a <__divmodhi4>
-		
-		
-			if(min > 59) min = 59;
+ 462:	0e 94 05 0a 	call	0x140a	; 0x140a <__divmodhi4>
  466:	6c 33       	cpi	r22, 0x3C	; 60
  468:	71 05       	cpc	r23, r1
  46a:	14 f0       	brlt	.+4      	; 0x470 <__EEPROM_REGION_LENGTH__+0x70>
  46c:	6b e3       	ldi	r22, 0x3B	; 59
  46e:	70 e0       	ldi	r23, 0x00	; 0
-			if(seg > 59) seg = 59;
  470:	8c 33       	cpi	r24, 0x3C	; 60
  472:	91 05       	cpc	r25, r1
  474:	14 f0       	brlt	.+4      	; 0x47a <__EEPROM_REGION_LENGTH__+0x7a>
  476:	8b e3       	ldi	r24, 0x3B	; 59
  478:	90 e0       	ldi	r25, 0x00	; 0
-			if(inicioRapido)
  47a:	20 91 1f 01 	lds	r18, 0x011F	; 0x80011f <inicioRapido>
  47e:	30 91 20 01 	lds	r19, 0x0120	; 0x800120 <inicioRapido+0x1>
  482:	23 2b       	or	r18, r19
  484:	89 f0       	breq	.+34     	; 0x4a8 <__EEPROM_REGION_LENGTH__+0xa8>
-			{
-				seg += 30;
  486:	9c 01       	movw	r18, r24
  488:	22 5e       	subi	r18, 0xE2	; 226
  48a:	3f 4f       	sbci	r19, 0xFF	; 255
-				if(seg > 59)
  48c:	2c 33       	cpi	r18, 0x3C	; 60
  48e:	31 05       	cpc	r19, r1
  490:	3c f0       	brlt	.+14     	; 0x4a0 <__EEPROM_REGION_LENGTH__+0xa0>
-				{
-					if(!(min == 59))
  492:	6b 33       	cpi	r22, 0x3B	; 59
  494:	71 05       	cpc	r23, r1
  496:	31 f0       	breq	.+12     	; 0x4a4 <__EEPROM_REGION_LENGTH__+0xa4>
-					{
-						min++;
  498:	6f 5f       	subi	r22, 0xFF	; 255
  49a:	7f 4f       	sbci	r23, 0xFF	; 255
-						seg = seg - 60;
  49c:	4e 97       	sbiw	r24, 0x1e	; 30
  49e:	04 c0       	rjmp	.+8      	; 0x4a8 <__EEPROM_REGION_LENGTH__+0xa8>
-		
-			if(min > 59) min = 59;
-			if(seg > 59) seg = 59;
-			if(inicioRapido)
-			{
-				seg += 30;
  4a0:	c9 01       	movw	r24, r18
  4a2:	02 c0       	rjmp	.+4      	; 0x4a8 <__EEPROM_REGION_LENGTH__+0xa8>
-					{
-						min++;
-						seg = seg - 60;
-					}
-					else
-						seg = 59;
  4a4:	8b e3       	ldi	r24, 0x3B	; 59
  4a6:	90 e0       	ldi	r25, 0x00	; 0
-				}
-			}
-			number = (min * 100) + seg;
  4a8:	44 e6       	ldi	r20, 0x64	; 100
  4aa:	46 9f       	mul	r20, r22
  4ac:	90 01       	movw	r18, r0
@@ -670,51 +561,33 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
  4b6:	39 1f       	adc	r19, r25
  4b8:	30 93 1e 01 	sts	0x011E, r19	; 0x80011e <number+0x1>
  4bc:	20 93 1d 01 	sts	0x011D, r18	; 0x80011d <number>
-			
-			ticks++;
  4c0:	90 91 2b 01 	lds	r25, 0x012B	; 0x80012b <ticks>
  4c4:	9f 5f       	subi	r25, 0xFF	; 255
  4c6:	90 93 2b 01 	sts	0x012B, r25	; 0x80012b <ticks>
-			if(ticks >= 100) //Como se ingresa a esta parte del codigo cada 10ms, puedo multiplicar eso por 100 y aproximar 1s
  4ca:	94 36       	cpi	r25, 0x64	; 100
  4cc:	08 f4       	brcc	.+2      	; 0x4d0 <__EEPROM_REGION_LENGTH__+0xd0>
  4ce:	91 c0       	rjmp	.+290    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-			{
-				ticks = 0; 
  4d0:	10 92 2b 01 	sts	0x012B, r1	; 0x80012b <ticks>
-			
-				min = number / 100;
  4d4:	c9 01       	movw	r24, r18
  4d6:	64 e6       	ldi	r22, 0x64	; 100
  4d8:	70 e0       	ldi	r23, 0x00	; 0
- 4da:	0e 94 2d 0a 	call	0x145a	; 0x145a <__divmodhi4>
+ 4da:	0e 94 05 0a 	call	0x140a	; 0x140a <__divmodhi4>
  4de:	ab 01       	movw	r20, r22
-				seg = number % 100;
  4e0:	9c 01       	movw	r18, r24
-			
-				if (seg > 0) {
  4e2:	18 16       	cp	r1, r24
  4e4:	19 06       	cpc	r1, r25
  4e6:	1c f4       	brge	.+6      	; 0x4ee <__EEPROM_REGION_LENGTH__+0xee>
-					seg--; 
  4e8:	21 50       	subi	r18, 0x01	; 1
  4ea:	31 09       	sbc	r19, r1
  4ec:	08 c0       	rjmp	.+16     	; 0x4fe <__EEPROM_REGION_LENGTH__+0xfe>
-					} else { 
-					if (min > 0) {
  4ee:	16 16       	cp	r1, r22
  4f0:	17 06       	cpc	r1, r23
  4f2:	2c f4       	brge	.+10     	; 0x4fe <__EEPROM_REGION_LENGTH__+0xfe>
-						min--;   
  4f4:	ab 01       	movw	r20, r22
  4f6:	41 50       	subi	r20, 0x01	; 1
  4f8:	51 09       	sbc	r21, r1
-						seg = 59; 
  4fa:	2b e3       	ldi	r18, 0x3B	; 59
  4fc:	30 e0       	ldi	r19, 0x00	; 0
-					}
-				}
-				number = (min * 100) + seg;
  4fe:	64 e6       	ldi	r22, 0x64	; 100
  500:	64 9f       	mul	r22, r20
  502:	c0 01       	movw	r24, r0
@@ -725,77 +598,52 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
  50c:	93 1f       	adc	r25, r19
  50e:	90 93 1e 01 	sts	0x011E, r25	; 0x80011e <number+0x1>
  512:	80 93 1d 01 	sts	0x011D, r24	; 0x80011d <number>
-			
-				if (number == 0) {
  516:	89 2b       	or	r24, r25
  518:	09 f0       	breq	.+2      	; 0x51c <__EEPROM_REGION_LENGTH__+0x11c>
  51a:	6b c0       	rjmp	.+214    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-					est_actual = FIN;
  51c:	84 e0       	ldi	r24, 0x04	; 4
  51e:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
  522:	67 c0       	rjmp	.+206    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-				}
-			}
-			break;
-		
-		case PARADO:
-		if (start) est_actual = COCINANDO;
  524:	80 91 25 01 	lds	r24, 0x0125	; 0x800125 <start>
  528:	90 91 26 01 	lds	r25, 0x0126	; 0x800126 <start+0x1>
  52c:	89 2b       	or	r24, r25
  52e:	19 f0       	breq	.+6      	; 0x536 <__EEPROM_REGION_LENGTH__+0x136>
  530:	82 e0       	ldi	r24, 0x02	; 2
  532:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
-		if (isNumber) est_actual = INGRESO;
  536:	80 91 17 01 	lds	r24, 0x0117	; 0x800117 <isNumber>
  53a:	90 91 18 01 	lds	r25, 0x0118	; 0x800118 <isNumber+0x1>
  53e:	89 2b       	or	r24, r25
  540:	19 f0       	breq	.+6      	; 0x548 <__EEPROM_REGION_LENGTH__+0x148>
  542:	81 e0       	ldi	r24, 0x01	; 1
  544:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__DATA_REGION_ORIGIN__>
-		if (clear) {
  548:	80 91 29 01 	lds	r24, 0x0129	; 0x800129 <clear>
  54c:	90 91 2a 01 	lds	r25, 0x012A	; 0x80012a <clear+0x1>
  550:	89 2b       	or	r24, r25
  552:	31 f0       	breq	.+12     	; 0x560 <__EEPROM_REGION_LENGTH__+0x160>
-			number = 0; // Agrego esto por seguridad al limpiar
  554:	10 92 1e 01 	sts	0x011E, r1	; 0x80011e <number+0x1>
  558:	10 92 1d 01 	sts	0x011D, r1	; 0x80011d <number>
-			est_actual = INICIAL;
  55c:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__DATA_REGION_ORIGIN__>
-		}
-		if(inicioRapido)
  560:	80 91 1f 01 	lds	r24, 0x011F	; 0x80011f <inicioRapido>
  564:	90 91 20 01 	lds	r25, 0x0120	; 0x800120 <inicioRapido+0x1>
  568:	89 2b       	or	r24, r25
  56a:	09 f4       	brne	.+2      	; 0x56e <__EEPROM_REGION_LENGTH__+0x16e>
  56c:	42 c0       	rjmp	.+132    	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-		{
-			min = number / 100;
  56e:	80 91 1d 01 	lds	r24, 0x011D	; 0x80011d <number>
  572:	90 91 1e 01 	lds	r25, 0x011E	; 0x80011e <number+0x1>
  576:	64 e6       	ldi	r22, 0x64	; 100
  578:	70 e0       	ldi	r23, 0x00	; 0
- 57a:	0e 94 2d 0a 	call	0x145a	; 0x145a <__divmodhi4>
+ 57a:	0e 94 05 0a 	call	0x140a	; 0x140a <__divmodhi4>
  57e:	ab 01       	movw	r20, r22
-			seg = number % 100;
-			seg += 30;
  580:	9c 01       	movw	r18, r24
  582:	22 5e       	subi	r18, 0xE2	; 226
  584:	3f 4f       	sbci	r19, 0xFF	; 255
-			if(seg > 59)
  586:	2c 33       	cpi	r18, 0x3C	; 60
  588:	31 05       	cpc	r19, r1
  58a:	24 f0       	brlt	.+8      	; 0x594 <__EEPROM_REGION_LENGTH__+0x194>
-			{
-				min++;
  58c:	4f 5f       	subi	r20, 0xFF	; 255
  58e:	5f 4f       	sbci	r21, 0xFF	; 255
-				seg = seg - 60;
  590:	2c 53       	subi	r18, 0x3C	; 60
  592:	31 09       	sbc	r19, r1
-			}
-			number = (min * 100) + seg;
  594:	64 e6       	ldi	r22, 0x64	; 100
  596:	64 9f       	mul	r22, r20
  598:	c0 01       	movw	r24, r0
@@ -807,12 +655,6 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
  5a4:	90 93 1e 01 	sts	0x011E, r25	; 0x80011e <number+0x1>
  5a8:	80 93 1d 01 	sts	0x011D, r24	; 0x80011d <number>
  5ac:	22 c0       	rjmp	.+68     	; 0x5f2 <__EEPROM_REGION_LENGTH__+0x1f2>
-		
-		
-		break;
-		
-		case FIN:
-			if (keypad_flag || ciclo_fin == 5) {est_actual = INICIAL;}
  5ae:	80 91 27 01 	lds	r24, 0x0127	; 0x800127 <keypad_flag>
  5b2:	90 91 28 01 	lds	r25, 0x0128	; 0x800128 <keypad_flag+0x1>
  5b6:	89 2b       	or	r24, r25
@@ -822,44 +664,28 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
  5c2:	05 97       	sbiw	r24, 0x05	; 5
  5c4:	11 f4       	brne	.+4      	; 0x5ca <__EEPROM_REGION_LENGTH__+0x1ca>
  5c6:	10 92 00 01 	sts	0x0100, r1	; 0x800100 <__DATA_REGION_ORIGIN__>
-			if (ticks == 100){
  5ca:	80 91 2b 01 	lds	r24, 0x012B	; 0x80012b <ticks>
  5ce:	84 36       	cpi	r24, 0x64	; 100
  5d0:	59 f4       	brne	.+22     	; 0x5e8 <__EEPROM_REGION_LENGTH__+0x1e8>
-				ciclo_fin++;
  5d2:	80 91 19 01 	lds	r24, 0x0119	; 0x800119 <ciclo_fin>
  5d6:	90 91 1a 01 	lds	r25, 0x011A	; 0x80011a <ciclo_fin+0x1>
  5da:	01 96       	adiw	r24, 0x01	; 1
  5dc:	90 93 1a 01 	sts	0x011A, r25	; 0x80011a <ciclo_fin+0x1>
  5e0:	80 93 19 01 	sts	0x0119, r24	; 0x800119 <ciclo_fin>
-				ticks = 0;
  5e4:	10 92 2b 01 	sts	0x012B, r1	; 0x80012b <ticks>
-			}
-			
-			ticks++;
  5e8:	80 91 2b 01 	lds	r24, 0x012B	; 0x80012b <ticks>
  5ec:	8f 5f       	subi	r24, 0xFF	; 255
  5ee:	80 93 2b 01 	sts	0x012B, r24	; 0x80012b <ticks>
-		break;
-	}
-
-	// bajo flags para que no se crea que el boton es eterno
-	keypad_flag = false;
  5f2:	10 92 28 01 	sts	0x0128, r1	; 0x800128 <keypad_flag+0x1>
  5f6:	10 92 27 01 	sts	0x0127, r1	; 0x800127 <keypad_flag>
-	inicioRapido = false;
  5fa:	10 92 20 01 	sts	0x0120, r1	; 0x800120 <inicioRapido+0x1>
  5fe:	10 92 1f 01 	sts	0x011F, r1	; 0x80011f <inicioRapido>
-	isNumber = false;
  602:	10 92 18 01 	sts	0x0118, r1	; 0x800118 <isNumber+0x1>
  606:	10 92 17 01 	sts	0x0117, r1	; 0x800117 <isNumber>
-	start = false;
  60a:	10 92 26 01 	sts	0x0126, r1	; 0x800126 <start+0x1>
  60e:	10 92 25 01 	sts	0x0125, r1	; 0x800125 <start>
-	stop = false;
  612:	10 92 24 01 	sts	0x0124, r1	; 0x800124 <stop+0x1>
  616:	10 92 23 01 	sts	0x0123, r1	; 0x800123 <stop>
-	clear = false;
  61a:	10 92 2a 01 	sts	0x012A, r1	; 0x80012a <clear+0x1>
  61e:	10 92 29 01 	sts	0x0129, r1	; 0x800129 <clear>
  622:	08 95       	ret
@@ -867,11 +693,6 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 Disassembly of section .text.actualizarSalida:
 
 00000bd6 <actualizarSalida>:
-}
-
-char* actualizarSalida()
-{
-	switch (est_actual) {
  bd6:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__DATA_REGION_ORIGIN__>
  bda:	82 30       	cpi	r24, 0x02	; 2
  bdc:	d9 f1       	breq	.+118    	; 0xc54 <actualizarSalida+0x7e>
@@ -888,8 +709,6 @@ char* actualizarSalida()
  bf2:	09 f4       	brne	.+2      	; 0xbf6 <actualizarSalida+0x20>
  bf4:	76 c0       	rjmp	.+236    	; 0xce2 <actualizarSalida+0x10c>
  bf6:	8c c0       	rjmp	.+280    	; 0xd10 <actualizarSalida+0x13a>
-		case INICIAL:
-		snprintf(keypad_out, sizeof(keypad_out), "00:00");
  bf8:	26 e0       	ldi	r18, 0x06	; 6
  bfa:	30 e0       	ldi	r19, 0x00	; 0
  bfc:	4a e1       	ldi	r20, 0x1A	; 26
@@ -897,17 +716,13 @@ char* actualizarSalida()
  c00:	60 e0       	ldi	r22, 0x00	; 0
  c02:	81 e1       	ldi	r24, 0x11	; 17
  c04:	91 e0       	ldi	r25, 0x01	; 1
- c06:	0e 94 fc 09 	call	0x13f8	; 0x13f8 <memcpy>
-		break;
+ c06:	0e 94 d4 09 	call	0x13a8	; 0x13a8 <memcpy>
  c0a:	82 c0       	rjmp	.+260    	; 0xd10 <actualizarSalida+0x13a>
-		
-		case INGRESO:
-		snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d", number / 100, number % 100);
  c0c:	80 91 1d 01 	lds	r24, 0x011D	; 0x80011d <number>
  c10:	90 91 1e 01 	lds	r25, 0x011E	; 0x80011e <number+0x1>
  c14:	64 e6       	ldi	r22, 0x64	; 100
  c16:	70 e0       	ldi	r23, 0x00	; 0
- c18:	0e 94 2d 0a 	call	0x145a	; 0x145a <__divmodhi4>
+ c18:	0e 94 05 0a 	call	0x140a	; 0x140a <__divmodhi4>
  c1c:	9f 93       	push	r25
  c1e:	8f 93       	push	r24
  c20:	7f 93       	push	r23
@@ -926,8 +741,6 @@ char* actualizarSalida()
  c3a:	9f 93       	push	r25
  c3c:	8f 93       	push	r24
  c3e:	0e 94 06 09 	call	0x120c	; 0x120c <snprintf>
-
-		break;
  c42:	8d b7       	in	r24, 0x3d	; 61
  c44:	9e b7       	in	r25, 0x3e	; 62
  c46:	0b 96       	adiw	r24, 0x0b	; 11
@@ -937,14 +750,11 @@ char* actualizarSalida()
  c4e:	0f be       	out	0x3f, r0	; 63
  c50:	8d bf       	out	0x3d, r24	; 61
  c52:	5e c0       	rjmp	.+188    	; 0xd10 <actualizarSalida+0x13a>
-		
-		case COCINANDO:
-		snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d", number / 100, number % 100);
  c54:	80 91 1d 01 	lds	r24, 0x011D	; 0x80011d <number>
  c58:	90 91 1e 01 	lds	r25, 0x011E	; 0x80011e <number+0x1>
  c5c:	64 e6       	ldi	r22, 0x64	; 100
  c5e:	70 e0       	ldi	r23, 0x00	; 0
- c60:	0e 94 2d 0a 	call	0x145a	; 0x145a <__divmodhi4>
+ c60:	0e 94 05 0a 	call	0x140a	; 0x140a <__divmodhi4>
  c64:	9f 93       	push	r25
  c66:	8f 93       	push	r24
  c68:	7f 93       	push	r23
@@ -971,14 +781,11 @@ char* actualizarSalida()
  c94:	9e bf       	out	0x3e, r25	; 62
  c96:	0f be       	out	0x3f, r0	; 63
  c98:	8d bf       	out	0x3d, r24	; 61
-		
-		case PARADO:
-		snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d", number / 100, number % 100);
  c9a:	80 91 1d 01 	lds	r24, 0x011D	; 0x80011d <number>
  c9e:	90 91 1e 01 	lds	r25, 0x011E	; 0x80011e <number+0x1>
  ca2:	64 e6       	ldi	r22, 0x64	; 100
  ca4:	70 e0       	ldi	r23, 0x00	; 0
- ca6:	0e 94 2d 0a 	call	0x145a	; 0x145a <__divmodhi4>
+ ca6:	0e 94 05 0a 	call	0x140a	; 0x140a <__divmodhi4>
  caa:	9f 93       	push	r25
  cac:	8f 93       	push	r24
  cae:	7f 93       	push	r23
@@ -997,7 +804,6 @@ char* actualizarSalida()
  cc8:	9f 93       	push	r25
  cca:	8f 93       	push	r24
  ccc:	0e 94 06 09 	call	0x120c	; 0x120c <snprintf>
-		break;
  cd0:	8d b7       	in	r24, 0x3d	; 61
  cd2:	9e b7       	in	r25, 0x3e	; 62
  cd4:	0b 96       	adiw	r24, 0x0b	; 11
@@ -1007,13 +813,9 @@ char* actualizarSalida()
  cdc:	0f be       	out	0x3f, r0	; 63
  cde:	8d bf       	out	0x3d, r24	; 61
  ce0:	17 c0       	rjmp	.+46     	; 0xd10 <actualizarSalida+0x13a>
-
-		case FIN:
-		if (ticks < 50)
  ce2:	80 91 2b 01 	lds	r24, 0x012B	; 0x80012b <ticks>
  ce6:	82 33       	cpi	r24, 0x32	; 50
  ce8:	50 f4       	brcc	.+20     	; 0xcfe <actualizarSalida+0x128>
-			snprintf(keypad_out, sizeof(keypad_out), "FIN  ");
  cea:	26 e0       	ldi	r18, 0x06	; 6
  cec:	30 e0       	ldi	r19, 0x00	; 0
  cee:	4a e2       	ldi	r20, 0x2A	; 42
@@ -1021,10 +823,8 @@ char* actualizarSalida()
  cf2:	60 e0       	ldi	r22, 0x00	; 0
  cf4:	81 e1       	ldi	r24, 0x11	; 17
  cf6:	91 e0       	ldi	r25, 0x01	; 1
- cf8:	0e 94 fc 09 	call	0x13f8	; 0x13f8 <memcpy>
+ cf8:	0e 94 d4 09 	call	0x13a8	; 0x13a8 <memcpy>
  cfc:	09 c0       	rjmp	.+18     	; 0xd10 <actualizarSalida+0x13a>
-		else
-			snprintf(keypad_out, sizeof(keypad_out), "     ");
  cfe:	26 e0       	ldi	r18, 0x06	; 6
  d00:	30 e0       	ldi	r19, 0x00	; 0
  d02:	40 e3       	ldi	r20, 0x30	; 48
@@ -1032,11 +832,7 @@ char* actualizarSalida()
  d06:	60 e0       	ldi	r22, 0x00	; 0
  d08:	81 e1       	ldi	r24, 0x11	; 17
  d0a:	91 e0       	ldi	r25, 0x01	; 1
- d0c:	0e 94 fc 09 	call	0x13f8	; 0x13f8 <memcpy>
-		break;
-	}
-	return keypad_out;
-}
+ d0c:	0e 94 d4 09 	call	0x13a8	; 0x13a8 <memcpy>
  d10:	81 e1       	ldi	r24, 0x11	; 17
  d12:	91 e0       	ldi	r25, 0x01	; 1
  d14:	08 95       	ret
@@ -1044,12 +840,6 @@ char* actualizarSalida()
 Disassembly of section .text.leerTeclado:
 
 00000a6c <leerTeclado>:
- * Created: 12/5/2026 13:34:48
- */
-#include "keypad.h"
-
-char leerTeclado()
-{
  a6c:	cf 93       	push	r28
  a6e:	df 93       	push	r29
  a70:	cd b7       	in	r28, 0x3d	; 61
@@ -1060,8 +850,6 @@ char leerTeclado()
  a7a:	de bf       	out	0x3e, r29	; 62
  a7c:	0f be       	out	0x3f, r0	; 63
  a7e:	cd bf       	out	0x3d, r28	; 61
-	//Una matriz simple para devolver el char apropiado
-	char mapa_teclas[4][4] = {
  a80:	80 e1       	ldi	r24, 0x10	; 16
  a82:	e1 e0       	ldi	r30, 0x01	; 1
  a84:	f1 e0       	ldi	r31, 0x01	; 1
@@ -1071,12 +859,6 @@ char leerTeclado()
  a8c:	0d 92       	st	X+, r0
  a8e:	8a 95       	dec	r24
  a90:	e1 f7       	brne	.-8      	; 0xa8a <leerTeclado+0x1e>
-	//Las filas estan en el Puerto B, asi que cada repeticion pone una en low haciendole un AND con PORTBX, siendo X el puerto que conecta esa fila
-	//Luego de un delay para estabilizar la señal, se hace lo siguiente:
-	//Siendo el puerto D la posicion de las columnas, si (!(PIND & (1 << PINDX))) es true, quiere decir que la posicion X esta en low, porque la tecla fue presionada
-	
-	//fila 1
-	PORTB &= ~(1 << PORTB4);
  a92:	85 b1       	in	r24, 0x05	; 5
  a94:	8f 7e       	andi	r24, 0xEF	; 239
  a96:	85 b9       	out	0x05, r24	; 5
@@ -1090,9 +872,6 @@ char leerTeclado()
  a9a:	8a 95       	dec	r24
  a9c:	f1 f7       	brne	.-4      	; 0xa9a <leerTeclado+0x2e>
  a9e:	00 00       	nop
-	_delay_us(10);
-
-	if (!(PIND & (1 << PIND3))) { PORTB |= (1 << PORTB4); return mapa_teclas[0][0]; }
  aa0:	4b 99       	sbic	0x09, 3	; 9
  aa2:	05 c0       	rjmp	.+10     	; 0xaae <leerTeclado+0x42>
  aa4:	85 b1       	in	r24, 0x05	; 5
@@ -1100,7 +879,6 @@ char leerTeclado()
  aa8:	85 b9       	out	0x05, r24	; 5
  aaa:	89 81       	ldd	r24, Y+1	; 0x01
  aac:	8b c0       	rjmp	.+278    	; 0xbc4 <leerTeclado+0x158>
-	if (!(PIND & (1 << PIND5))) { PORTB |= (1 << PORTB4); return mapa_teclas[0][1]; }
  aae:	4d 99       	sbic	0x09, 5	; 9
  ab0:	05 c0       	rjmp	.+10     	; 0xabc <leerTeclado+0x50>
  ab2:	85 b1       	in	r24, 0x05	; 5
@@ -1108,7 +886,6 @@ char leerTeclado()
  ab6:	85 b9       	out	0x05, r24	; 5
  ab8:	8a 81       	ldd	r24, Y+2	; 0x02
  aba:	84 c0       	rjmp	.+264    	; 0xbc4 <leerTeclado+0x158>
-	if (!(PIND & (1 << PIND4))) { PORTB |= (1 << PORTB4); return mapa_teclas[0][2]; }
  abc:	4c 99       	sbic	0x09, 4	; 9
  abe:	05 c0       	rjmp	.+10     	; 0xaca <leerTeclado+0x5e>
  ac0:	85 b1       	in	r24, 0x05	; 5
@@ -1116,7 +893,6 @@ char leerTeclado()
  ac4:	85 b9       	out	0x05, r24	; 5
  ac6:	8b 81       	ldd	r24, Y+3	; 0x03
  ac8:	7d c0       	rjmp	.+250    	; 0xbc4 <leerTeclado+0x158>
-	if (!(PIND & (1 << PIND2))) { PORTB |= (1 << PORTB4); return mapa_teclas[0][3]; }
  aca:	4a 99       	sbic	0x09, 2	; 9
  acc:	05 c0       	rjmp	.+10     	; 0xad8 <leerTeclado+0x6c>
  ace:	85 b1       	in	r24, 0x05	; 5
@@ -1124,13 +900,9 @@ char leerTeclado()
  ad2:	85 b9       	out	0x05, r24	; 5
  ad4:	8c 81       	ldd	r24, Y+4	; 0x04
  ad6:	76 c0       	rjmp	.+236    	; 0xbc4 <leerTeclado+0x158>
-	
-	PORTB |= (1 << PORTB4);
  ad8:	85 b1       	in	r24, 0x05	; 5
  ada:	80 61       	ori	r24, 0x10	; 16
  adc:	85 b9       	out	0x05, r24	; 5
-	//fila2
-	PORTB &= ~(1 << PORTB3);
  ade:	85 b1       	in	r24, 0x05	; 5
  ae0:	87 7f       	andi	r24, 0xF7	; 247
  ae2:	85 b9       	out	0x05, r24	; 5
@@ -1138,9 +910,6 @@ char leerTeclado()
  ae6:	8a 95       	dec	r24
  ae8:	f1 f7       	brne	.-4      	; 0xae6 <leerTeclado+0x7a>
  aea:	00 00       	nop
-	_delay_us(10);
-	
-	if (!(PIND & (1 << PIND3))) { PORTB |= (1 << PORTB3); return mapa_teclas[1][0]; }
  aec:	4b 99       	sbic	0x09, 3	; 9
  aee:	05 c0       	rjmp	.+10     	; 0xafa <leerTeclado+0x8e>
  af0:	85 b1       	in	r24, 0x05	; 5
@@ -1148,7 +917,6 @@ char leerTeclado()
  af4:	85 b9       	out	0x05, r24	; 5
  af6:	8d 81       	ldd	r24, Y+5	; 0x05
  af8:	65 c0       	rjmp	.+202    	; 0xbc4 <leerTeclado+0x158>
-	if (!(PIND & (1 << PIND5))) { PORTB |= (1 << PORTB3); return mapa_teclas[1][1]; }
  afa:	4d 99       	sbic	0x09, 5	; 9
  afc:	05 c0       	rjmp	.+10     	; 0xb08 <leerTeclado+0x9c>
  afe:	85 b1       	in	r24, 0x05	; 5
@@ -1156,7 +924,6 @@ char leerTeclado()
  b02:	85 b9       	out	0x05, r24	; 5
  b04:	8e 81       	ldd	r24, Y+6	; 0x06
  b06:	5e c0       	rjmp	.+188    	; 0xbc4 <leerTeclado+0x158>
-	if (!(PIND & (1 << PIND4))) { PORTB |= (1 << PORTB3); return mapa_teclas[1][2]; }
  b08:	4c 99       	sbic	0x09, 4	; 9
  b0a:	05 c0       	rjmp	.+10     	; 0xb16 <leerTeclado+0xaa>
  b0c:	85 b1       	in	r24, 0x05	; 5
@@ -1164,7 +931,6 @@ char leerTeclado()
  b10:	85 b9       	out	0x05, r24	; 5
  b12:	8f 81       	ldd	r24, Y+7	; 0x07
  b14:	57 c0       	rjmp	.+174    	; 0xbc4 <leerTeclado+0x158>
-	if (!(PIND & (1 << PIND2))) { PORTB |= (1 << PORTB3); return mapa_teclas[1][3]; }
  b16:	4a 99       	sbic	0x09, 2	; 9
  b18:	05 c0       	rjmp	.+10     	; 0xb24 <leerTeclado+0xb8>
  b1a:	85 b1       	in	r24, 0x05	; 5
@@ -1172,13 +938,9 @@ char leerTeclado()
  b1e:	85 b9       	out	0x05, r24	; 5
  b20:	88 85       	ldd	r24, Y+8	; 0x08
  b22:	50 c0       	rjmp	.+160    	; 0xbc4 <leerTeclado+0x158>
-	
-	PORTB |= (1 << PORTB3);
  b24:	85 b1       	in	r24, 0x05	; 5
  b26:	88 60       	ori	r24, 0x08	; 8
  b28:	85 b9       	out	0x05, r24	; 5
-	//fila3
-	PORTB &= ~(1 << PORTB0);
  b2a:	85 b1       	in	r24, 0x05	; 5
  b2c:	8e 7f       	andi	r24, 0xFE	; 254
  b2e:	85 b9       	out	0x05, r24	; 5
@@ -1186,9 +948,6 @@ char leerTeclado()
  b32:	8a 95       	dec	r24
  b34:	f1 f7       	brne	.-4      	; 0xb32 <leerTeclado+0xc6>
  b36:	00 00       	nop
-	_delay_us(10);
-
-	if (!(PIND & (1 << PIND3))) { PORTB |= (1 << PORTB0); return mapa_teclas[2][0]; }
  b38:	4b 99       	sbic	0x09, 3	; 9
  b3a:	05 c0       	rjmp	.+10     	; 0xb46 <leerTeclado+0xda>
  b3c:	85 b1       	in	r24, 0x05	; 5
@@ -1196,7 +955,6 @@ char leerTeclado()
  b40:	85 b9       	out	0x05, r24	; 5
  b42:	89 85       	ldd	r24, Y+9	; 0x09
  b44:	3f c0       	rjmp	.+126    	; 0xbc4 <leerTeclado+0x158>
-	if (!(PIND & (1 << PIND5))) { PORTB |= (1 << PORTB0); return mapa_teclas[2][1]; }
  b46:	4d 99       	sbic	0x09, 5	; 9
  b48:	05 c0       	rjmp	.+10     	; 0xb54 <leerTeclado+0xe8>
  b4a:	85 b1       	in	r24, 0x05	; 5
@@ -1204,7 +962,6 @@ char leerTeclado()
  b4e:	85 b9       	out	0x05, r24	; 5
  b50:	8a 85       	ldd	r24, Y+10	; 0x0a
  b52:	38 c0       	rjmp	.+112    	; 0xbc4 <leerTeclado+0x158>
-	if (!(PIND & (1 << PIND4))) { PORTB |= (1 << PORTB0); return mapa_teclas[2][2]; }
  b54:	4c 99       	sbic	0x09, 4	; 9
  b56:	05 c0       	rjmp	.+10     	; 0xb62 <leerTeclado+0xf6>
  b58:	85 b1       	in	r24, 0x05	; 5
@@ -1212,7 +969,6 @@ char leerTeclado()
  b5c:	85 b9       	out	0x05, r24	; 5
  b5e:	8b 85       	ldd	r24, Y+11	; 0x0b
  b60:	31 c0       	rjmp	.+98     	; 0xbc4 <leerTeclado+0x158>
-	if (!(PIND & (1 << PIND2))) { PORTB |= (1 << PORTB0); return mapa_teclas[2][3]; }
  b62:	4a 99       	sbic	0x09, 2	; 9
  b64:	05 c0       	rjmp	.+10     	; 0xb70 <leerTeclado+0x104>
  b66:	85 b1       	in	r24, 0x05	; 5
@@ -1220,13 +976,9 @@ char leerTeclado()
  b6a:	85 b9       	out	0x05, r24	; 5
  b6c:	8c 85       	ldd	r24, Y+12	; 0x0c
  b6e:	2a c0       	rjmp	.+84     	; 0xbc4 <leerTeclado+0x158>
-	
-	PORTB |= (1 << PORTB0);
  b70:	85 b1       	in	r24, 0x05	; 5
  b72:	81 60       	ori	r24, 0x01	; 1
  b74:	85 b9       	out	0x05, r24	; 5
-	//fila 4
-	PORTD &= ~(1 << PORTD7);
  b76:	8b b1       	in	r24, 0x0b	; 11
  b78:	8f 77       	andi	r24, 0x7F	; 127
  b7a:	8b b9       	out	0x0b, r24	; 11
@@ -1234,9 +986,6 @@ char leerTeclado()
  b7e:	8a 95       	dec	r24
  b80:	f1 f7       	brne	.-4      	; 0xb7e <leerTeclado+0x112>
  b82:	00 00       	nop
-	_delay_us(10);
-
-	if (!(PIND & (1 << PIND3))) { PORTD |= (1 << PORTD7); return mapa_teclas[3][0]; }
  b84:	4b 99       	sbic	0x09, 3	; 9
  b86:	05 c0       	rjmp	.+10     	; 0xb92 <leerTeclado+0x126>
  b88:	8b b1       	in	r24, 0x0b	; 11
@@ -1244,7 +993,6 @@ char leerTeclado()
  b8c:	8b b9       	out	0x0b, r24	; 11
  b8e:	8d 85       	ldd	r24, Y+13	; 0x0d
  b90:	19 c0       	rjmp	.+50     	; 0xbc4 <leerTeclado+0x158>
-	if (!(PIND & (1 << PIND5))) { PORTD |= (1 << PORTD7); return mapa_teclas[3][1]; }
  b92:	4d 99       	sbic	0x09, 5	; 9
  b94:	05 c0       	rjmp	.+10     	; 0xba0 <leerTeclado+0x134>
  b96:	8b b1       	in	r24, 0x0b	; 11
@@ -1252,7 +1000,6 @@ char leerTeclado()
  b9a:	8b b9       	out	0x0b, r24	; 11
  b9c:	8e 85       	ldd	r24, Y+14	; 0x0e
  b9e:	12 c0       	rjmp	.+36     	; 0xbc4 <leerTeclado+0x158>
-	if (!(PIND & (1 << PIND4))) { PORTD |= (1 << PORTD7); return mapa_teclas[3][2]; }
  ba0:	4c 99       	sbic	0x09, 4	; 9
  ba2:	05 c0       	rjmp	.+10     	; 0xbae <leerTeclado+0x142>
  ba4:	8b b1       	in	r24, 0x0b	; 11
@@ -1260,7 +1007,6 @@ char leerTeclado()
  ba8:	8b b9       	out	0x0b, r24	; 11
  baa:	8f 85       	ldd	r24, Y+15	; 0x0f
  bac:	0b c0       	rjmp	.+22     	; 0xbc4 <leerTeclado+0x158>
-	if (!(PIND & (1 << PIND2))) { PORTD |= (1 << PORTD7); return mapa_teclas[3][3]; }
  bae:	4a 99       	sbic	0x09, 2	; 9
  bb0:	05 c0       	rjmp	.+10     	; 0xbbc <leerTeclado+0x150>
  bb2:	8b b1       	in	r24, 0x0b	; 11
@@ -1268,16 +1014,10 @@ char leerTeclado()
  bb6:	8b b9       	out	0x0b, r24	; 11
  bb8:	88 89       	ldd	r24, Y+16	; 0x10
  bba:	04 c0       	rjmp	.+8      	; 0xbc4 <leerTeclado+0x158>
-	
-	PORTD |= (1 << PORTD7);
  bbc:	8b b1       	in	r24, 0x0b	; 11
  bbe:	80 68       	ori	r24, 0x80	; 128
  bc0:	8b b9       	out	0x0b, r24	; 11
-	
-	
-	return 0xFF;
  bc2:	8f ef       	ldi	r24, 0xFF	; 255
-} 
  bc4:	60 96       	adiw	r28, 0x10	; 16
  bc6:	0f b6       	in	r0, 0x3f	; 63
  bc8:	f8 94       	cli
@@ -1290,66 +1030,36 @@ char leerTeclado()
 
 Disassembly of section .text.KEYPAD_Scan:
 
-00001314 <KEYPAD_Scan>:
-DEVUELVE:
-0 -> NO HAYNUEVA TECLA PRESIONADA
-1 -> HAY NUEVA TECLA PRESIONADA Y ES *pkey
-********************************************************/
-uint8_t KEYPAD_Scan (uint8_t *pkey)
-{
-    1314:	cf 93       	push	r28
-    1316:	df 93       	push	r29
-    1318:	ec 01       	movw	r28, r24
-	static uint8_t Old_key, Last_valid_key=0xFF; // no hay tecla presionada;
-	uint8_t Key;
-	Key = leerTeclado(); //devuelve el char.
-    131a:	0e 94 36 05 	call	0xa6c	; 0xa6c <leerTeclado>
-	if(Key==0xFF){
-    131e:	8f 3f       	cpi	r24, 0xFF	; 255
-    1320:	31 f4       	brne	.+12     	; 0x132e <KEYPAD_Scan+0x1a>
-		Old_key=0xFF; // no hay tecla presionada
-    1322:	80 93 2d 01 	sts	0x012D, r24	; 0x80012d <Old_key.1737>
-		Last_valid_key=0xFF;
-    1326:	80 93 2c 01 	sts	0x012C, r24	; 0x80012c <Last_valid_key.1738>
-		return 0;
-    132a:	80 e0       	ldi	r24, 0x00	; 0
-    132c:	10 c0       	rjmp	.+32     	; 0x134e <KEYPAD_Scan+0x3a>
-	}
-	if(Key==Old_key) { //2da verificación
-    132e:	90 91 2d 01 	lds	r25, 0x012D	; 0x80012d <Old_key.1737>
-    1332:	89 13       	cpse	r24, r25
-    1334:	09 c0       	rjmp	.+18     	; 0x1348 <KEYPAD_Scan+0x34>
-		if(Key!=Last_valid_key){ //evita múltiple detección
-    1336:	90 91 2c 01 	lds	r25, 0x012C	; 0x80012c <Last_valid_key.1738>
-    133a:	89 17       	cp	r24, r25
-    133c:	29 f0       	breq	.+10     	; 0x1348 <KEYPAD_Scan+0x34>
-			*pkey=Key;
-    133e:	88 83       	st	Y, r24
-			Last_valid_key = Key;
-    1340:	80 93 2c 01 	sts	0x012C, r24	; 0x80012c <Last_valid_key.1738>
-			return 1;
-    1344:	81 e0       	ldi	r24, 0x01	; 1
-    1346:	03 c0       	rjmp	.+6      	; 0x134e <KEYPAD_Scan+0x3a>
-		}
-	}
-	Old_key=Key; //1era verificación
-    1348:	80 93 2d 01 	sts	0x012D, r24	; 0x80012d <Old_key.1737>
-	return 0;
-    134c:	80 e0       	ldi	r24, 0x00	; 0
-}
-    134e:	df 91       	pop	r29
-    1350:	cf 91       	pop	r28
-    1352:	08 95       	ret
+000012c4 <KEYPAD_Scan>:
+    12c4:	cf 93       	push	r28
+    12c6:	df 93       	push	r29
+    12c8:	ec 01       	movw	r28, r24
+    12ca:	0e 94 36 05 	call	0xa6c	; 0xa6c <leerTeclado>
+    12ce:	8f 3f       	cpi	r24, 0xFF	; 255
+    12d0:	31 f4       	brne	.+12     	; 0x12de <KEYPAD_Scan+0x1a>
+    12d2:	80 93 2d 01 	sts	0x012D, r24	; 0x80012d <Old_key.1737>
+    12d6:	80 93 2c 01 	sts	0x012C, r24	; 0x80012c <Last_valid_key.1738>
+    12da:	80 e0       	ldi	r24, 0x00	; 0
+    12dc:	10 c0       	rjmp	.+32     	; 0x12fe <KEYPAD_Scan+0x3a>
+    12de:	90 91 2d 01 	lds	r25, 0x012D	; 0x80012d <Old_key.1737>
+    12e2:	89 13       	cpse	r24, r25
+    12e4:	09 c0       	rjmp	.+18     	; 0x12f8 <KEYPAD_Scan+0x34>
+    12e6:	90 91 2c 01 	lds	r25, 0x012C	; 0x80012c <Last_valid_key.1738>
+    12ea:	89 17       	cp	r24, r25
+    12ec:	29 f0       	breq	.+10     	; 0x12f8 <KEYPAD_Scan+0x34>
+    12ee:	88 83       	st	Y, r24
+    12f0:	80 93 2c 01 	sts	0x012C, r24	; 0x80012c <Last_valid_key.1738>
+    12f4:	81 e0       	ldi	r24, 0x01	; 1
+    12f6:	03 c0       	rjmp	.+6      	; 0x12fe <KEYPAD_Scan+0x3a>
+    12f8:	80 93 2d 01 	sts	0x012D, r24	; 0x80012d <Old_key.1737>
+    12fc:	80 e0       	ldi	r24, 0x00	; 0
+    12fe:	df 91       	pop	r29
+    1300:	cf 91       	pop	r28
+    1302:	08 95       	ret
 
 Disassembly of section .text.LCDsendChar:
 
 00000d16 <LCDsendChar>:
-}
-
-//LCD cursor home
-void LCDhome(void)			
-{
-	LCDsendCommand(1<<LCD_HOME);
  d16:	65 b1       	in	r22, 0x05	; 5
  d18:	98 2f       	mov	r25, r24
  d1a:	90 74       	andi	r25, 0x40	; 64
@@ -1657,110 +1367,59 @@ Disassembly of section .text.LCDsendCommand:
 
 Disassembly of section .text.LCDclr:
 
-0000151c <LCDclr>:
-}
-
-//Clears LCD
-void LCDclr(void)				
-{
-	LCDsendCommand(1<<LCD_CLR);
-    151c:	81 e0       	ldi	r24, 0x01	; 1
-    151e:	0e 94 23 07 	call	0xe46	; 0xe46 <LCDsendCommand>
-    1522:	08 95       	ret
+0000152e <LCDclr>:
+    152e:	81 e0       	ldi	r24, 0x01	; 1
+    1530:	0e 94 23 07 	call	0xe46	; 0xe46 <LCDsendCommand>
+    1534:	08 95       	ret
 
 Disassembly of section .text.LCDstring:
 
-0000142a <LCDstring>:
-	LCDsendCommand(1<<LCD_HOME);
-}
-
-//Outputs string to LCD
-void LCDstring(uint8_t* data, uint8_t nBytes)	
-{
-    142a:	0f 93       	push	r16
-    142c:	1f 93       	push	r17
-    142e:	cf 93       	push	r28
-    1430:	df 93       	push	r29
-register uint8_t i;
-
-	// check to make sure we have a good pointer
-	if (!data) return;
-    1432:	00 97       	sbiw	r24, 0x00	; 0
-    1434:	69 f0       	breq	.+26     	; 0x1450 <LCDstring+0x26>
-    1436:	d6 2f       	mov	r29, r22
-    1438:	8c 01       	movw	r16, r24
-    143a:	c0 e0       	ldi	r28, 0x00	; 0
-    143c:	07 c0       	rjmp	.+14     	; 0x144c <LCDstring+0x22>
-	// print data
-	for(i=0; i<nBytes; i++)
-	{
-		LCDsendChar(data[i]);
-    143e:	f8 01       	movw	r30, r16
-    1440:	ec 0f       	add	r30, r28
-    1442:	f1 1d       	adc	r31, r1
-    1444:	80 81       	ld	r24, Z
-    1446:	0e 94 8b 06 	call	0xd16	; 0xd16 <LCDsendChar>
-register uint8_t i;
-
-	// check to make sure we have a good pointer
-	if (!data) return;
-	// print data
-	for(i=0; i<nBytes; i++)
-    144a:	cf 5f       	subi	r28, 0xFF	; 255
-    144c:	cd 17       	cp	r28, r29
-    144e:	b8 f3       	brcs	.-18     	; 0x143e <LCDstring+0x14>
-	{
-		LCDsendChar(data[i]);
-	}
-}
-    1450:	df 91       	pop	r29
-    1452:	cf 91       	pop	r28
-    1454:	1f 91       	pop	r17
-    1456:	0f 91       	pop	r16
-    1458:	08 95       	ret
+000013da <LCDstring>:
+    13da:	0f 93       	push	r16
+    13dc:	1f 93       	push	r17
+    13de:	cf 93       	push	r28
+    13e0:	df 93       	push	r29
+    13e2:	00 97       	sbiw	r24, 0x00	; 0
+    13e4:	69 f0       	breq	.+26     	; 0x1400 <LCDstring+0x26>
+    13e6:	d6 2f       	mov	r29, r22
+    13e8:	8c 01       	movw	r16, r24
+    13ea:	c0 e0       	ldi	r28, 0x00	; 0
+    13ec:	07 c0       	rjmp	.+14     	; 0x13fc <LCDstring+0x22>
+    13ee:	f8 01       	movw	r30, r16
+    13f0:	ec 0f       	add	r30, r28
+    13f2:	f1 1d       	adc	r31, r1
+    13f4:	80 81       	ld	r24, Z
+    13f6:	0e 94 8b 06 	call	0xd16	; 0xd16 <LCDsendChar>
+    13fa:	cf 5f       	subi	r28, 0xFF	; 255
+    13fc:	cd 17       	cp	r28, r29
+    13fe:	b8 f3       	brcs	.-18     	; 0x13ee <LCDstring+0x14>
+    1400:	df 91       	pop	r29
+    1402:	cf 91       	pop	r28
+    1404:	1f 91       	pop	r17
+    1406:	0f 91       	pop	r16
+    1408:	08 95       	ret
 
 Disassembly of section .text.LCDGotoXY:
 
-000014aa <LCDGotoXY>:
-//Cursor to X Y position
-void LCDGotoXY(uint8_t x, uint8_t y)	
-{
-	register uint8_t DDRAMAddr;
-	// remap lines into proper order
-	switch(y)
-    14aa:	62 30       	cpi	r22, 0x02	; 2
-    14ac:	31 f0       	breq	.+12     	; 0x14ba <LCDGotoXY+0x10>
-    14ae:	63 30       	cpi	r22, 0x03	; 3
-    14b0:	31 f0       	breq	.+12     	; 0x14be <LCDGotoXY+0x14>
-    14b2:	61 30       	cpi	r22, 0x01	; 1
-    14b4:	29 f4       	brne	.+10     	; 0x14c0 <LCDGotoXY+0x16>
-	{
-	case 0: DDRAMAddr = LCD_LINE0_DDRAMADDR+x; break;
-	case 1: DDRAMAddr = LCD_LINE1_DDRAMADDR+x; break;
-    14b6:	80 5c       	subi	r24, 0xC0	; 192
-    14b8:	03 c0       	rjmp	.+6      	; 0x14c0 <LCDGotoXY+0x16>
-	case 2: DDRAMAddr = LCD_LINE2_DDRAMADDR+x; break;
-    14ba:	8c 5e       	subi	r24, 0xEC	; 236
-    14bc:	01 c0       	rjmp	.+2      	; 0x14c0 <LCDGotoXY+0x16>
-	case 3: DDRAMAddr = LCD_LINE3_DDRAMADDR+x; break;
-    14be:	8c 5a       	subi	r24, 0xAC	; 172
-	default: DDRAMAddr = LCD_LINE0_DDRAMADDR+x;
-	}
-	// set data address
-	LCDsendCommand(1<<LCD_DDRAM | DDRAMAddr);
-    14c0:	80 68       	ori	r24, 0x80	; 128
-    14c2:	0e 94 23 07 	call	0xe46	; 0xe46 <LCDsendCommand>
-    14c6:	08 95       	ret
+00001480 <LCDGotoXY>:
+    1480:	62 30       	cpi	r22, 0x02	; 2
+    1482:	31 f0       	breq	.+12     	; 0x1490 <LCDGotoXY+0x10>
+    1484:	63 30       	cpi	r22, 0x03	; 3
+    1486:	31 f0       	breq	.+12     	; 0x1494 <LCDGotoXY+0x14>
+    1488:	61 30       	cpi	r22, 0x01	; 1
+    148a:	29 f4       	brne	.+10     	; 0x1496 <LCDGotoXY+0x16>
+    148c:	80 5c       	subi	r24, 0xC0	; 192
+    148e:	03 c0       	rjmp	.+6      	; 0x1496 <LCDGotoXY+0x16>
+    1490:	8c 5e       	subi	r24, 0xEC	; 236
+    1492:	01 c0       	rjmp	.+2      	; 0x1496 <LCDGotoXY+0x16>
+    1494:	8c 5a       	subi	r24, 0xAC	; 172
+    1496:	80 68       	ori	r24, 0x80	; 128
+    1498:	0e 94 23 07 	call	0xe46	; 0xe46 <LCDsendCommand>
+    149c:	08 95       	ret
 
 Disassembly of section .text.LCDdefinechar:
 
 000011a2 <LCDdefinechar>:
-}
-
-//LCD cursor home
-void LCDhome(void)			
-{
-	LCDsendCommand(1<<LCD_HOME);
     11a2:	cf 92       	push	r12
     11a4:	df 92       	push	r13
     11a6:	ef 92       	push	r14
@@ -1944,130 +1603,158 @@ Disassembly of section .text.LCDinit:
 
 Disassembly of section .text.init_timer:
 
-000014e6 <init_timer>:
+000014bc <init_timer>:
 #include "MEF.h"
 volatile uint8_t flag10ms = 0;
 
 void init_timer()
 {
 	TCCR0A |= (1 << WGM01);
-    14e6:	84 b5       	in	r24, 0x24	; 36
-    14e8:	82 60       	ori	r24, 0x02	; 2
-    14ea:	84 bd       	out	0x24, r24	; 36
+    14bc:	84 b5       	in	r24, 0x24	; 36
+    14be:	82 60       	ori	r24, 0x02	; 2
+    14c0:	84 bd       	out	0x24, r24	; 36
 	OCR0A = (F_CPU / 1024) * 0.01;
-    14ec:	8c e9       	ldi	r24, 0x9C	; 156
-    14ee:	87 bd       	out	0x27, r24	; 39
+    14c2:	8c e9       	ldi	r24, 0x9C	; 156
+    14c4:	87 bd       	out	0x27, r24	; 39
 	TIMSK0 |= (1 << OCIE0A);
-    14f0:	ee e6       	ldi	r30, 0x6E	; 110
-    14f2:	f0 e0       	ldi	r31, 0x00	; 0
-    14f4:	80 81       	ld	r24, Z
-    14f6:	82 60       	ori	r24, 0x02	; 2
-    14f8:	80 83       	st	Z, r24
+    14c6:	ee e6       	ldi	r30, 0x6E	; 110
+    14c8:	f0 e0       	ldi	r31, 0x00	; 0
+    14ca:	80 81       	ld	r24, Z
+    14cc:	82 60       	ori	r24, 0x02	; 2
+    14ce:	80 83       	st	Z, r24
 	TCCR0B |= (1 << CS02) | (1 << CS00);
-    14fa:	85 b5       	in	r24, 0x25	; 37
-    14fc:	85 60       	ori	r24, 0x05	; 5
-    14fe:	85 bd       	out	0x25, r24	; 37
-    1500:	08 95       	ret
+    14d0:	85 b5       	in	r24, 0x25	; 37
+    14d2:	85 60       	ori	r24, 0x05	; 5
+    14d4:	85 bd       	out	0x25, r24	; 37
+    14d6:	08 95       	ret
 
 Disassembly of section .text.__vector_14:
 
-000014c8 <__vector_14>:
+0000149e <__vector_14>:
 }
 ISR(TIMER0_COMPA_vect) {
-    14c8:	1f 92       	push	r1
-    14ca:	0f 92       	push	r0
-    14cc:	0f b6       	in	r0, 0x3f	; 63
-    14ce:	0f 92       	push	r0
-    14d0:	11 24       	eor	r1, r1
-    14d2:	8f 93       	push	r24
+    149e:	1f 92       	push	r1
+    14a0:	0f 92       	push	r0
+    14a2:	0f b6       	in	r0, 0x3f	; 63
+    14a4:	0f 92       	push	r0
+    14a6:	11 24       	eor	r1, r1
+    14a8:	8f 93       	push	r24
 	flag10ms = 1;
-    14d4:	81 e0       	ldi	r24, 0x01	; 1
-    14d6:	80 93 2e 01 	sts	0x012E, r24	; 0x80012e <flag10ms>
+    14aa:	81 e0       	ldi	r24, 0x01	; 1
+    14ac:	80 93 2e 01 	sts	0x012E, r24	; 0x80012e <flag10ms>
 }
-    14da:	8f 91       	pop	r24
-    14dc:	0f 90       	pop	r0
-    14de:	0f be       	out	0x3f, r0	; 63
-    14e0:	0f 90       	pop	r0
-    14e2:	1f 90       	pop	r1
-    14e4:	18 95       	reti
+    14b0:	8f 91       	pop	r24
+    14b2:	0f 90       	pop	r0
+    14b4:	0f be       	out	0x3f, r0	; 63
+    14b6:	0f 90       	pop	r0
+    14b8:	1f 90       	pop	r1
+    14ba:	18 95       	reti
 
-Disassembly of section .text.init_ports:
+Disassembly of section .text.init_ports_leds:
 
-000012c4 <init_ports>:
-void init_ports(void) {
+000014f2 <init_ports_leds>:
+
+void init_ports_leds(void) {
 	// 1. Configuro los puertos para los LEDs.
 	/* Los configuro como salida */
 	DDRB |= (1 << DDB5);
-    12c4:	84 b1       	in	r24, 0x04	; 4
-    12c6:	80 62       	ori	r24, 0x20	; 32
-    12c8:	84 b9       	out	0x04, r24	; 4
+    14f2:	84 b1       	in	r24, 0x04	; 4
+    14f4:	80 62       	ori	r24, 0x20	; 32
+    14f6:	84 b9       	out	0x04, r24	; 4
 	DDRC |= (1 << DDC4) | (1 << DDC5);
-    12ca:	87 b1       	in	r24, 0x07	; 7
-    12cc:	80 63       	ori	r24, 0x30	; 48
-    12ce:	87 b9       	out	0x07, r24	; 7
+    14f8:	87 b1       	in	r24, 0x07	; 7
+    14fa:	80 63       	ori	r24, 0x30	; 48
+    14fc:	87 b9       	out	0x07, r24	; 7
 	
 	/* Por defecto deben estar apagados */
 	PORTB &= ~(1 << PORTB5);
-    12d0:	85 b1       	in	r24, 0x05	; 5
-    12d2:	8f 7d       	andi	r24, 0xDF	; 223
-    12d4:	85 b9       	out	0x05, r24	; 5
+    14fe:	85 b1       	in	r24, 0x05	; 5
+    1500:	8f 7d       	andi	r24, 0xDF	; 223
+    1502:	85 b9       	out	0x05, r24	; 5
 	PORTC &= ~((1 << PORTC4) | (1 << PORTC5));
-    12d6:	88 b1       	in	r24, 0x08	; 8
-    12d8:	8f 7c       	andi	r24, 0xCF	; 207
-    12da:	88 b9       	out	0x08, r24	; 8
-	
-	
+    1504:	88 b1       	in	r24, 0x08	; 8
+    1506:	8f 7c       	andi	r24, 0xCF	; 207
+    1508:	88 b9       	out	0x08, r24	; 8
+    150a:	08 95       	ret
+
+Disassembly of section .text.init_ports_display:
+
+0000150c <init_ports_display>:
+}
+
+void init_ports_display(void) {
 	// 2. Configuro los puertos para el DISPLAY LED
 	/* Los configuro como salida */
 	DDRC |= (1 << DDC1) | (1 << DDC2);
-    12dc:	87 b1       	in	r24, 0x07	; 7
-    12de:	86 60       	ori	r24, 0x06	; 6
-    12e0:	87 b9       	out	0x07, r24	; 7
+    150c:	87 b1       	in	r24, 0x07	; 7
+    150e:	86 60       	ori	r24, 0x06	; 6
+    1510:	87 b9       	out	0x07, r24	; 7
 	DDRB |= (1 << DDB1) | (1 << DDB2);
-    12e2:	84 b1       	in	r24, 0x04	; 4
-    12e4:	86 60       	ori	r24, 0x06	; 6
-    12e6:	84 b9       	out	0x04, r24	; 4
+    1512:	84 b1       	in	r24, 0x04	; 4
+    1514:	86 60       	ori	r24, 0x06	; 6
+    1516:	84 b9       	out	0x04, r24	; 4
 	
 	DDRD |= (1 << DDD0) | (1 << DDD1); // E y RS
-    12e8:	8a b1       	in	r24, 0x0a	; 10
-    12ea:	83 60       	ori	r24, 0x03	; 3
-    12ec:	8a b9       	out	0x0a, r24	; 10
-	
-	
+    1518:	8a b1       	in	r24, 0x0a	; 10
+    151a:	83 60       	ori	r24, 0x03	; 3
+    151c:	8a b9       	out	0x0a, r24	; 10
+    151e:	08 95       	ret
+
+Disassembly of section .text.init_ports_keypad:
+
+0000145a <init_ports_keypad>:
+}
+
+void init_ports_keypad(void) {
 	// 3. Configuro los puertos para la matríz de botones
 	/* Configuro los puertos PB0, PB3, PB4 y PD7 como SALIDA */
 	DDRB |= (1 << DDB0) | (1 << DDB3) | (1 << DDB4);
-    12ee:	84 b1       	in	r24, 0x04	; 4
-    12f0:	89 61       	ori	r24, 0x19	; 25
-    12f2:	84 b9       	out	0x04, r24	; 4
+    145a:	84 b1       	in	r24, 0x04	; 4
+    145c:	89 61       	ori	r24, 0x19	; 25
+    145e:	84 b9       	out	0x04, r24	; 4
 	DDRD |= (1 << DDD7);
-    12f4:	8a b1       	in	r24, 0x0a	; 10
-    12f6:	80 68       	ori	r24, 0x80	; 128
-    12f8:	8a b9       	out	0x0a, r24	; 10
+    1460:	8a b1       	in	r24, 0x0a	; 10
+    1462:	80 68       	ori	r24, 0x80	; 128
+    1464:	8a b9       	out	0x0a, r24	; 10
 	
 	/* Inicializo las filas en HIGH (para escanear poniendo en LOW) */
 	PORTB |= (1 << PORTB4) | (1 << PORTB3) | (1 << PORTB0);
-    12fa:	85 b1       	in	r24, 0x05	; 5
-    12fc:	89 61       	ori	r24, 0x19	; 25
-    12fe:	85 b9       	out	0x05, r24	; 5
+    1466:	85 b1       	in	r24, 0x05	; 5
+    1468:	89 61       	ori	r24, 0x19	; 25
+    146a:	85 b9       	out	0x05, r24	; 5
 	PORTD |= (1 << PORTD7);
-    1300:	8b b1       	in	r24, 0x0b	; 11
-    1302:	80 68       	ori	r24, 0x80	; 128
-    1304:	8b b9       	out	0x0b, r24	; 11
+    146c:	8b b1       	in	r24, 0x0b	; 11
+    146e:	80 68       	ori	r24, 0x80	; 128
+    1470:	8b b9       	out	0x0b, r24	; 11
 	
 	
 	/* Configuro los puertos PD2, PD3, PD4, PD5 como ENTRADA */
 	DDRD &= ~((1 << DDD2) | (1 << DDD3) | (1 << DDD4) | (1 << DDD5));
-    1306:	8a b1       	in	r24, 0x0a	; 10
-    1308:	83 7c       	andi	r24, 0xC3	; 195
-    130a:	8a b9       	out	0x0a, r24	; 10
+    1472:	8a b1       	in	r24, 0x0a	; 10
+    1474:	83 7c       	andi	r24, 0xC3	; 195
+    1476:	8a b9       	out	0x0a, r24	; 10
 	
 	/*Habilitar resistencias Pull-Up internas para las columnas*/
 	PORTD |= (1 << PORTD2) | (1 << PORTD3) | (1 << PORTD4) | (1 << PORTD5);
-    130c:	8b b1       	in	r24, 0x0b	; 11
-    130e:	8c 63       	ori	r24, 0x3C	; 60
-    1310:	8b b9       	out	0x0b, r24	; 11
-    1312:	08 95       	ret
+    1478:	8b b1       	in	r24, 0x0b	; 11
+    147a:	8c 63       	ori	r24, 0x3C	; 60
+    147c:	8b b9       	out	0x0b, r24	; 11
+    147e:	08 95       	ret
+
+Disassembly of section .text.init_ports:
+
+00001520 <init_ports>:
+}
+
+void init_ports(void) {
+	
+	init_ports_leds();
+    1520:	0e 94 79 0a 	call	0x14f2	; 0x14f2 <init_ports_leds>
+	init_ports_display();
+    1524:	0e 94 86 0a 	call	0x150c	; 0x150c <init_ports_display>
+	init_ports_keypad();
+    1528:	0e 94 2d 0a 	call	0x145a	; 0x145a <init_ports_keypad>
+    152c:	08 95       	ret
 
 Disassembly of section .text.main:
 
@@ -2085,19 +1772,19 @@ int main(void) {
 	LCDinit();
     127a:	0e 94 b7 07 	call	0xf6e	; 0xf6e <LCDinit>
 	iniciarMEF(); //inicializar la máquina de estados. Estado Actual = INICIO.
-    127e:	0e 94 81 0a 	call	0x1502	; 0x1502 <iniciarMEF>
+    127e:	0e 94 6c 0a 	call	0x14d8	; 0x14d8 <iniciarMEF>
 	init_ports();
-    1282:	0e 94 62 09 	call	0x12c4	; 0x12c4 <init_ports>
+    1282:	0e 94 90 0a 	call	0x1520	; 0x1520 <init_ports>
 	init_timer();	
-    1286:	0e 94 73 0a 	call	0x14e6	; 0x14e6 <init_timer>
+    1286:	0e 94 5e 0a 	call	0x14bc	; 0x14bc <init_timer>
 	LCDGotoXY(1,1);
     128a:	61 e0       	ldi	r22, 0x01	; 1
     128c:	81 e0       	ldi	r24, 0x01	; 1
-    128e:	0e 94 55 0a 	call	0x14aa	; 0x14aa <LCDGotoXY>
+    128e:	0e 94 40 0a 	call	0x1480	; 0x1480 <LCDGotoXY>
 	char pkey;
 	uint8_t flag_key;
 	LCDclr();
-    1292:	0e 94 8e 0a 	call	0x151c	; 0x151c <LCDclr>
+    1292:	0e 94 97 0a 	call	0x152e	; 0x152e <LCDclr>
 	while (1)
 	{
 		if(flag10ms == 1)
@@ -2112,7 +1799,7 @@ int main(void) {
 			flag_key = KEYPAD_Scan(&pkey);
     12a2:	ce 01       	movw	r24, r28
     12a4:	01 96       	adiw	r24, 0x01	; 1
-    12a6:	0e 94 8a 09 	call	0x1314	; 0x1314 <KEYPAD_Scan>
+    12a6:	0e 94 62 09 	call	0x12c4	; 0x12c4 <KEYPAD_Scan>
 			
 			// Actualizar el estado de la máquina (La MEF se encarga de ignorar la tecla si flag_key es 0).
 			actualizarMEF(flag_key, pkey);
@@ -2123,98 +1810,98 @@ int main(void) {
 			LCDGotoXY(1,1);
     12b0:	61 e0       	ldi	r22, 0x01	; 1
     12b2:	81 e0       	ldi	r24, 0x01	; 1
-    12b4:	0e 94 55 0a 	call	0x14aa	; 0x14aa <LCDGotoXY>
+    12b4:	0e 94 40 0a 	call	0x1480	; 0x1480 <LCDGotoXY>
 			LCDstring(actualizarSalida(), 5);
     12b8:	0e 94 eb 05 	call	0xbd6	; 0xbd6 <actualizarSalida>
     12bc:	65 e0       	ldi	r22, 0x05	; 5
-    12be:	0e 94 15 0a 	call	0x142a	; 0x142a <LCDstring>
+    12be:	0e 94 ed 09 	call	0x13da	; 0x13da <LCDstring>
     12c2:	e9 cf       	rjmp	.-46     	; 0x1296 <main+0x28>
 
 Disassembly of section .text.libgcc.div:
 
-0000145a <__divmodhi4>:
-    145a:	97 fb       	bst	r25, 7
-    145c:	07 2e       	mov	r0, r23
-    145e:	16 f4       	brtc	.+4      	; 0x1464 <__divmodhi4+0xa>
-    1460:	00 94       	com	r0
-    1462:	07 d0       	rcall	.+14     	; 0x1472 <__divmodhi4_neg1>
-    1464:	77 fd       	sbrc	r23, 7
-    1466:	09 d0       	rcall	.+18     	; 0x147a <__divmodhi4_neg2>
-    1468:	0e 94 41 0a 	call	0x1482	; 0x1482 <__udivmodhi4>
-    146c:	07 fc       	sbrc	r0, 7
-    146e:	05 d0       	rcall	.+10     	; 0x147a <__divmodhi4_neg2>
-    1470:	3e f4       	brtc	.+14     	; 0x1480 <__divmodhi4_exit>
+0000140a <__divmodhi4>:
+    140a:	97 fb       	bst	r25, 7
+    140c:	07 2e       	mov	r0, r23
+    140e:	16 f4       	brtc	.+4      	; 0x1414 <__divmodhi4+0xa>
+    1410:	00 94       	com	r0
+    1412:	07 d0       	rcall	.+14     	; 0x1422 <__divmodhi4_neg1>
+    1414:	77 fd       	sbrc	r23, 7
+    1416:	09 d0       	rcall	.+18     	; 0x142a <__divmodhi4_neg2>
+    1418:	0e 94 19 0a 	call	0x1432	; 0x1432 <__udivmodhi4>
+    141c:	07 fc       	sbrc	r0, 7
+    141e:	05 d0       	rcall	.+10     	; 0x142a <__divmodhi4_neg2>
+    1420:	3e f4       	brtc	.+14     	; 0x1430 <__divmodhi4_exit>
 
-00001472 <__divmodhi4_neg1>:
-    1472:	90 95       	com	r25
-    1474:	81 95       	neg	r24
-    1476:	9f 4f       	sbci	r25, 0xFF	; 255
-    1478:	08 95       	ret
+00001422 <__divmodhi4_neg1>:
+    1422:	90 95       	com	r25
+    1424:	81 95       	neg	r24
+    1426:	9f 4f       	sbci	r25, 0xFF	; 255
+    1428:	08 95       	ret
 
-0000147a <__divmodhi4_neg2>:
-    147a:	70 95       	com	r23
-    147c:	61 95       	neg	r22
-    147e:	7f 4f       	sbci	r23, 0xFF	; 255
+0000142a <__divmodhi4_neg2>:
+    142a:	70 95       	com	r23
+    142c:	61 95       	neg	r22
+    142e:	7f 4f       	sbci	r23, 0xFF	; 255
 
-00001480 <__divmodhi4_exit>:
-    1480:	08 95       	ret
+00001430 <__divmodhi4_exit>:
+    1430:	08 95       	ret
 
 Disassembly of section .text.libgcc.div:
 
-00001482 <__udivmodhi4>:
-    1482:	aa 1b       	sub	r26, r26
-    1484:	bb 1b       	sub	r27, r27
-    1486:	51 e1       	ldi	r21, 0x11	; 17
-    1488:	07 c0       	rjmp	.+14     	; 0x1498 <__udivmodhi4_ep>
+00001432 <__udivmodhi4>:
+    1432:	aa 1b       	sub	r26, r26
+    1434:	bb 1b       	sub	r27, r27
+    1436:	51 e1       	ldi	r21, 0x11	; 17
+    1438:	07 c0       	rjmp	.+14     	; 0x1448 <__udivmodhi4_ep>
 
-0000148a <__udivmodhi4_loop>:
-    148a:	aa 1f       	adc	r26, r26
-    148c:	bb 1f       	adc	r27, r27
-    148e:	a6 17       	cp	r26, r22
-    1490:	b7 07       	cpc	r27, r23
-    1492:	10 f0       	brcs	.+4      	; 0x1498 <__udivmodhi4_ep>
-    1494:	a6 1b       	sub	r26, r22
-    1496:	b7 0b       	sbc	r27, r23
+0000143a <__udivmodhi4_loop>:
+    143a:	aa 1f       	adc	r26, r26
+    143c:	bb 1f       	adc	r27, r27
+    143e:	a6 17       	cp	r26, r22
+    1440:	b7 07       	cpc	r27, r23
+    1442:	10 f0       	brcs	.+4      	; 0x1448 <__udivmodhi4_ep>
+    1444:	a6 1b       	sub	r26, r22
+    1446:	b7 0b       	sbc	r27, r23
 
-00001498 <__udivmodhi4_ep>:
-    1498:	88 1f       	adc	r24, r24
-    149a:	99 1f       	adc	r25, r25
-    149c:	5a 95       	dec	r21
-    149e:	a9 f7       	brne	.-22     	; 0x148a <__udivmodhi4_loop>
-    14a0:	80 95       	com	r24
-    14a2:	90 95       	com	r25
-    14a4:	bc 01       	movw	r22, r24
-    14a6:	cd 01       	movw	r24, r26
-    14a8:	08 95       	ret
+00001448 <__udivmodhi4_ep>:
+    1448:	88 1f       	adc	r24, r24
+    144a:	99 1f       	adc	r25, r25
+    144c:	5a 95       	dec	r21
+    144e:	a9 f7       	brne	.-22     	; 0x143a <__udivmodhi4_loop>
+    1450:	80 95       	com	r24
+    1452:	90 95       	com	r25
+    1454:	bc 01       	movw	r22, r24
+    1456:	cd 01       	movw	r24, r26
+    1458:	08 95       	ret
 
 Disassembly of section .text.avrlibc:
 
-000013f8 <memcpy>:
-    13f8:	cf 92       	push	r12
-    13fa:	df 92       	push	r13
-    13fc:	ef 92       	push	r14
-    13fe:	dc 01       	movw	r26, r24
-    1400:	6a 01       	movw	r12, r20
-    1402:	e6 2e       	mov	r14, r22
-    1404:	28 0f       	add	r18, r24
-    1406:	39 1f       	adc	r19, r25
-    1408:	a2 17       	cp	r26, r18
-    140a:	b3 07       	cpc	r27, r19
-    140c:	51 f0       	breq	.+20     	; 0x1422 <memcpy+0x2a>
-    140e:	f6 01       	movw	r30, r12
-    1410:	44 91       	lpm	r20, Z
-    1412:	e7 fc       	sbrc	r14, 7
-    1414:	40 81       	ld	r20, Z
-    1416:	4d 93       	st	X+, r20
-    1418:	4f ef       	ldi	r20, 0xFF	; 255
-    141a:	c4 1a       	sub	r12, r20
-    141c:	d4 0a       	sbc	r13, r20
-    141e:	e4 0a       	sbc	r14, r20
-    1420:	f3 cf       	rjmp	.-26     	; 0x1408 <memcpy+0x10>
-    1422:	ef 90       	pop	r14
-    1424:	df 90       	pop	r13
-    1426:	cf 90       	pop	r12
-    1428:	08 95       	ret
+000013a8 <memcpy>:
+    13a8:	cf 92       	push	r12
+    13aa:	df 92       	push	r13
+    13ac:	ef 92       	push	r14
+    13ae:	dc 01       	movw	r26, r24
+    13b0:	6a 01       	movw	r12, r20
+    13b2:	e6 2e       	mov	r14, r22
+    13b4:	28 0f       	add	r18, r24
+    13b6:	39 1f       	adc	r19, r25
+    13b8:	a2 17       	cp	r26, r18
+    13ba:	b3 07       	cpc	r27, r19
+    13bc:	51 f0       	breq	.+20     	; 0x13d2 <memcpy+0x2a>
+    13be:	f6 01       	movw	r30, r12
+    13c0:	44 91       	lpm	r20, Z
+    13c2:	e7 fc       	sbrc	r14, 7
+    13c4:	40 81       	ld	r20, Z
+    13c6:	4d 93       	st	X+, r20
+    13c8:	4f ef       	ldi	r20, 0xFF	; 255
+    13ca:	c4 1a       	sub	r12, r20
+    13cc:	d4 0a       	sbc	r13, r20
+    13ce:	e4 0a       	sbc	r14, r20
+    13d0:	f3 cf       	rjmp	.-26     	; 0x13b8 <memcpy+0x10>
+    13d2:	ef 90       	pop	r14
+    13d4:	df 90       	pop	r13
+    13d6:	cf 90       	pop	r12
+    13d8:	08 95       	ret
 
 Disassembly of section .text.avrlibc:
 
@@ -2223,7 +1910,7 @@ Disassembly of section .text.avrlibc:
     120e:	b0 e0       	ldi	r27, 0x00	; 0
     1210:	ec e0       	ldi	r30, 0x0C	; 12
     1212:	f9 e0       	ldi	r31, 0x09	; 9
-    1214:	0c 94 b8 09 	jmp	0x1370	; 0x1370 <__prologue_saves__+0x1c>
+    1214:	0c 94 90 09 	jmp	0x1320	; 0x1320 <__prologue_saves__+0x1c>
     1218:	0e 89       	ldd	r16, Y+22	; 0x16
     121a:	1f 89       	ldd	r17, Y+23	; 0x17
     121c:	88 8d       	ldd	r24, Y+24	; 0x18
@@ -2264,7 +1951,7 @@ Disassembly of section .text.avrlibc:
     1264:	10 82       	st	Z, r1
     1266:	2f 96       	adiw	r28, 0x0f	; 15
     1268:	e4 e0       	ldi	r30, 0x04	; 4
-    126a:	0c 94 ef 09 	jmp	0x13de	; 0x13de <__epilogue_restores__+0x1c>
+    126a:	0c 94 c7 09 	jmp	0x138e	; 0x138e <__epilogue_restores__+0x1c>
 
 Disassembly of section .text.avrlibc:
 
@@ -2465,7 +2152,7 @@ Disassembly of section .text.avrlibc:
  7a8:	5f ef       	ldi	r21, 0xFF	; 255
  7aa:	84 2d       	mov	r24, r4
  7ac:	b1 01       	movw	r22, r2
- 7ae:	0e 94 c6 09 	call	0x138c	; 0x138c <strnlen>
+ 7ae:	0e 94 9e 09 	call	0x133c	; 0x133c <strnlen>
  7b2:	5c 01       	movw	r10, r24
  7b4:	ee 84       	ldd	r14, Y+14	; 0x0e
  7b6:	ff 84       	ldd	r15, Y+15	; 0x0f
@@ -2489,7 +2176,7 @@ Disassembly of section .text.avrlibc:
  7da:	5f ef       	ldi	r21, 0xFF	; 255
  7dc:	84 2d       	mov	r24, r4
  7de:	b1 01       	movw	r22, r2
- 7e0:	0e 94 c6 09 	call	0x138c	; 0x138c <strnlen>
+ 7e0:	0e 94 9e 09 	call	0x133c	; 0x133c <strnlen>
  7e4:	5c 01       	movw	r10, r24
  7e6:	10 68       	ori	r17, 0x80	; 128
  7e8:	ee 84       	ldd	r14, Y+14	; 0x0e
@@ -2807,34 +2494,34 @@ Disassembly of section .text.avrlibc:
 
 Disassembly of section .text.avrlibc:
 
-0000138c <strnlen>:
-    138c:	cf 92       	push	r12
-    138e:	df 92       	push	r13
-    1390:	ef 92       	push	r14
-    1392:	6b 01       	movw	r12, r22
-    1394:	e8 2e       	mov	r14, r24
-    1396:	a8 2f       	mov	r26, r24
-    1398:	cb 01       	movw	r24, r22
-    139a:	41 15       	cp	r20, r1
-    139c:	51 05       	cpc	r21, r1
-    139e:	31 f4       	brne	.+12     	; 0x13ac <strnlen+0x20>
-    13a0:	8c 19       	sub	r24, r12
-    13a2:	9d 09       	sbc	r25, r13
-    13a4:	ef 90       	pop	r14
-    13a6:	df 90       	pop	r13
-    13a8:	cf 90       	pop	r12
-    13aa:	08 95       	ret
-    13ac:	fc 01       	movw	r30, r24
-    13ae:	24 91       	lpm	r18, Z
-    13b0:	a7 fd       	sbrc	r26, 7
-    13b2:	20 81       	ld	r18, Z
-    13b4:	22 23       	and	r18, r18
-    13b6:	a1 f3       	breq	.-24     	; 0x13a0 <strnlen+0x14>
-    13b8:	01 96       	adiw	r24, 0x01	; 1
-    13ba:	a1 1d       	adc	r26, r1
-    13bc:	41 50       	subi	r20, 0x01	; 1
-    13be:	51 09       	sbc	r21, r1
-    13c0:	ec cf       	rjmp	.-40     	; 0x139a <strnlen+0xe>
+0000133c <strnlen>:
+    133c:	cf 92       	push	r12
+    133e:	df 92       	push	r13
+    1340:	ef 92       	push	r14
+    1342:	6b 01       	movw	r12, r22
+    1344:	e8 2e       	mov	r14, r24
+    1346:	a8 2f       	mov	r26, r24
+    1348:	cb 01       	movw	r24, r22
+    134a:	41 15       	cp	r20, r1
+    134c:	51 05       	cpc	r21, r1
+    134e:	31 f4       	brne	.+12     	; 0x135c <strnlen+0x20>
+    1350:	8c 19       	sub	r24, r12
+    1352:	9d 09       	sbc	r25, r13
+    1354:	ef 90       	pop	r14
+    1356:	df 90       	pop	r13
+    1358:	cf 90       	pop	r12
+    135a:	08 95       	ret
+    135c:	fc 01       	movw	r30, r24
+    135e:	24 91       	lpm	r18, Z
+    1360:	a7 fd       	sbrc	r26, 7
+    1362:	20 81       	ld	r18, Z
+    1364:	22 23       	and	r18, r18
+    1366:	a1 f3       	breq	.-24     	; 0x1350 <strnlen+0x14>
+    1368:	01 96       	adiw	r24, 0x01	; 1
+    136a:	a1 1d       	adc	r26, r1
+    136c:	41 50       	subi	r20, 0x01	; 1
+    136e:	51 09       	sbc	r21, r1
+    1370:	ec cf       	rjmp	.-40     	; 0x134a <strnlen+0xe>
 
 Disassembly of section .text.avrlibc:
 
@@ -3000,63 +2687,63 @@ Disassembly of section .text.avrlibc:
 
 Disassembly of section .text.libgcc.prologue:
 
-00001354 <__prologue_saves__>:
-    1354:	2f 92       	push	r2
-    1356:	3f 92       	push	r3
-    1358:	4f 92       	push	r4
-    135a:	5f 92       	push	r5
-    135c:	6f 92       	push	r6
-    135e:	7f 92       	push	r7
-    1360:	8f 92       	push	r8
-    1362:	9f 92       	push	r9
-    1364:	af 92       	push	r10
-    1366:	bf 92       	push	r11
-    1368:	cf 92       	push	r12
-    136a:	df 92       	push	r13
-    136c:	ef 92       	push	r14
-    136e:	ff 92       	push	r15
-    1370:	0f 93       	push	r16
-    1372:	1f 93       	push	r17
-    1374:	cf 93       	push	r28
-    1376:	df 93       	push	r29
-    1378:	cd b7       	in	r28, 0x3d	; 61
-    137a:	de b7       	in	r29, 0x3e	; 62
-    137c:	ca 1b       	sub	r28, r26
-    137e:	db 0b       	sbc	r29, r27
-    1380:	0f b6       	in	r0, 0x3f	; 63
-    1382:	f8 94       	cli
-    1384:	de bf       	out	0x3e, r29	; 62
-    1386:	0f be       	out	0x3f, r0	; 63
-    1388:	cd bf       	out	0x3d, r28	; 61
-    138a:	09 94       	ijmp
+00001304 <__prologue_saves__>:
+    1304:	2f 92       	push	r2
+    1306:	3f 92       	push	r3
+    1308:	4f 92       	push	r4
+    130a:	5f 92       	push	r5
+    130c:	6f 92       	push	r6
+    130e:	7f 92       	push	r7
+    1310:	8f 92       	push	r8
+    1312:	9f 92       	push	r9
+    1314:	af 92       	push	r10
+    1316:	bf 92       	push	r11
+    1318:	cf 92       	push	r12
+    131a:	df 92       	push	r13
+    131c:	ef 92       	push	r14
+    131e:	ff 92       	push	r15
+    1320:	0f 93       	push	r16
+    1322:	1f 93       	push	r17
+    1324:	cf 93       	push	r28
+    1326:	df 93       	push	r29
+    1328:	cd b7       	in	r28, 0x3d	; 61
+    132a:	de b7       	in	r29, 0x3e	; 62
+    132c:	ca 1b       	sub	r28, r26
+    132e:	db 0b       	sbc	r29, r27
+    1330:	0f b6       	in	r0, 0x3f	; 63
+    1332:	f8 94       	cli
+    1334:	de bf       	out	0x3e, r29	; 62
+    1336:	0f be       	out	0x3f, r0	; 63
+    1338:	cd bf       	out	0x3d, r28	; 61
+    133a:	09 94       	ijmp
 
 Disassembly of section .text.libgcc.prologue:
 
-000013c2 <__epilogue_restores__>:
-    13c2:	2a 88       	ldd	r2, Y+18	; 0x12
-    13c4:	39 88       	ldd	r3, Y+17	; 0x11
-    13c6:	48 88       	ldd	r4, Y+16	; 0x10
-    13c8:	5f 84       	ldd	r5, Y+15	; 0x0f
-    13ca:	6e 84       	ldd	r6, Y+14	; 0x0e
-    13cc:	7d 84       	ldd	r7, Y+13	; 0x0d
-    13ce:	8c 84       	ldd	r8, Y+12	; 0x0c
-    13d0:	9b 84       	ldd	r9, Y+11	; 0x0b
-    13d2:	aa 84       	ldd	r10, Y+10	; 0x0a
-    13d4:	b9 84       	ldd	r11, Y+9	; 0x09
-    13d6:	c8 84       	ldd	r12, Y+8	; 0x08
-    13d8:	df 80       	ldd	r13, Y+7	; 0x07
-    13da:	ee 80       	ldd	r14, Y+6	; 0x06
-    13dc:	fd 80       	ldd	r15, Y+5	; 0x05
-    13de:	0c 81       	ldd	r16, Y+4	; 0x04
-    13e0:	1b 81       	ldd	r17, Y+3	; 0x03
-    13e2:	aa 81       	ldd	r26, Y+2	; 0x02
-    13e4:	b9 81       	ldd	r27, Y+1	; 0x01
-    13e6:	ce 0f       	add	r28, r30
-    13e8:	d1 1d       	adc	r29, r1
-    13ea:	0f b6       	in	r0, 0x3f	; 63
-    13ec:	f8 94       	cli
-    13ee:	de bf       	out	0x3e, r29	; 62
-    13f0:	0f be       	out	0x3f, r0	; 63
-    13f2:	cd bf       	out	0x3d, r28	; 61
-    13f4:	ed 01       	movw	r28, r26
-    13f6:	08 95       	ret
+00001372 <__epilogue_restores__>:
+    1372:	2a 88       	ldd	r2, Y+18	; 0x12
+    1374:	39 88       	ldd	r3, Y+17	; 0x11
+    1376:	48 88       	ldd	r4, Y+16	; 0x10
+    1378:	5f 84       	ldd	r5, Y+15	; 0x0f
+    137a:	6e 84       	ldd	r6, Y+14	; 0x0e
+    137c:	7d 84       	ldd	r7, Y+13	; 0x0d
+    137e:	8c 84       	ldd	r8, Y+12	; 0x0c
+    1380:	9b 84       	ldd	r9, Y+11	; 0x0b
+    1382:	aa 84       	ldd	r10, Y+10	; 0x0a
+    1384:	b9 84       	ldd	r11, Y+9	; 0x09
+    1386:	c8 84       	ldd	r12, Y+8	; 0x08
+    1388:	df 80       	ldd	r13, Y+7	; 0x07
+    138a:	ee 80       	ldd	r14, Y+6	; 0x06
+    138c:	fd 80       	ldd	r15, Y+5	; 0x05
+    138e:	0c 81       	ldd	r16, Y+4	; 0x04
+    1390:	1b 81       	ldd	r17, Y+3	; 0x03
+    1392:	aa 81       	ldd	r26, Y+2	; 0x02
+    1394:	b9 81       	ldd	r27, Y+1	; 0x01
+    1396:	ce 0f       	add	r28, r30
+    1398:	d1 1d       	adc	r29, r1
+    139a:	0f b6       	in	r0, 0x3f	; 63
+    139c:	f8 94       	cli
+    139e:	de bf       	out	0x3e, r29	; 62
+    13a0:	0f be       	out	0x3f, r0	; 63
+    13a2:	cd bf       	out	0x3d, r28	; 61
+    13a4:	ed 01       	movw	r28, r26
+    13a6:	08 95       	ret
