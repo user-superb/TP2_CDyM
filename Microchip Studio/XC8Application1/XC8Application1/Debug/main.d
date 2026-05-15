@@ -18,7 +18,7 @@ main.d main.o: .././main.c \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdlib.h \
  c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\pgmspace.h \
- .././MEF.h
+ .././led.h .././MEF.h
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\io.h:
 
@@ -57,5 +57,7 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\stdlib.h:
 c:\program\ files\microchip\xc8\v2.31\avr\lib\gcc\avr\5.4.0\include\stddef.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\pgmspace.h:
+
+.././led.h:
 
 .././MEF.h:

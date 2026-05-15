@@ -4,6 +4,7 @@
 #include <avr/interrupt.h>
 
 #include "lcd.h"
+#include "led.h"
 #include "MEF.h"
 volatile uint8_t flag10ms = 0;
 
@@ -25,8 +26,8 @@ void init_ports_leds(void) {
 	DDRC |= (1 << DDC4) | (1 << DDC5);
 	
 	/* Por defecto deben estar apagados */
-	PORTB &= ~(1 << PORTB5);
-	PORTC &= ~((1 << PORTC4) | (1 << PORTC5));
+	APAGAR_LED(PORTB, PORTB5);
+	APAGAR_LED(PORTC, PORTC4); APAGAR_LED(PORTC, PORTC5);
 }
 
 void init_ports_display(void) {

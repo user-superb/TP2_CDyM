@@ -4,6 +4,9 @@
 #define true 1
 #define false 0
 #include "MEF.h"
+
+#include "led.h"
+
 //Enumerativo de estados.
 typedef enum {INICIAL,INGRESO,COCINANDO,PARADO,FIN}ESTADO;
 ESTADO est_actual;
@@ -61,6 +64,8 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 			} else if(inicioRapido == true) {
 				number = 30;
 				est_actual = COCINANDO;
+				PRENDER_LED(PORTB, PORTB5);
+				PRENDER_LED(PORTC, PORTC4);
 			} 
 			else if(isNumber == true) {
 			est_actual = INGRESO;
@@ -72,6 +77,8 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 		if (keypad_flag == true) {
 			if (start == true) {
 				est_actual = COCINANDO;
+				PRENDER_LED(PORTB, PORTB5);
+				PRENDER_LED(PORTC, PORTC4);
 				} else if (clear == true) {
 				number = 0;
 				contador = 0;
@@ -95,13 +102,22 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 				}
 				number = (min * 100) + seg;
 				est_actual = COCINANDO;
+				PRENDER_LED(PORTB, PORTB5);
+				PRENDER_LED(PORTC, PORTC4);
 			}
 		}
 		break;
 		
 		case COCINANDO:
-			if (stop) {est_actual = PARADO; break;}
-			if (fin) {est_actual = FIN; break;}
+			if (stop) {
+				est_actual = PARADO;
+				APAGAR_LED(PORTB, PORTB5);
+				break;
+			}
+			if (fin) {
+				est_actual = FIN;
+				break;
+			}
 			//aca actualiza por si el numero es invalido. Preferiria que se hiciera en el estado INGRESO, pero no me salio	
 			int min = number / 100;
 			int seg = number % 100;
@@ -150,11 +166,16 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 			break;
 		
 		case PARADO:
-		if (start) est_actual = COCINANDO;
+		if (start) {
+			est_actual = COCINANDO;
+			PRENDER_LED(PORTB, PORTB5);
+		}
 		if (isNumber) est_actual = INGRESO;
 		if (clear) {
 			number = 0; // Agrego esto por seguridad al limpiar
 			est_actual = INICIAL;
+			APAGAR_LED(PORTB, PORTB5);
+			APAGAR_LED(PORTC, PORTC4);
 		}
 		if(inicioRapido)
 		{
@@ -173,6 +194,8 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 		break;
 		
 		case FIN:
+			APAGAR_LED(PORTB, PORTB5);
+			APAGAR_LED(PORTC, PORTC4);
 			if (keypad_flag || ciclo_fin == 5) {est_actual = INICIAL;}
 			if (ticks == 100){
 				ciclo_fin++;
@@ -197,6 +220,7 @@ char* actualizarSalida()
 	switch (est_actual) {
 		case INICIAL:
 		snprintf(keypad_out, sizeof(keypad_out), "00:00");
+		APAGAR_LED(PORTC, PORTC5); // Me aseguro que LED3 esté apagado en el estado inicial
 		break;
 		
 		case INGRESO:
@@ -212,10 +236,14 @@ char* actualizarSalida()
 		break;
 
 		case FIN:
-		if (ticks < 50)
+		if (ticks < 50) {
 			snprintf(keypad_out, sizeof(keypad_out), "FIN  ");
-		else
+			PRENDER_LED(PORTC, PORTC5);
+		}
+		else {
 			snprintf(keypad_out, sizeof(keypad_out), "     ");
+			APAGAR_LED(PORTC, PORTC5);
+		}
 		break;
 	}
 	return keypad_out;
