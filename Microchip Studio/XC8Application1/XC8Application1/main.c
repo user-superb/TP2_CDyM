@@ -19,17 +19,6 @@ ISR(TIMER0_COMPA_vect) {
 	flag10ms = 1;
 }
 
-void init_ports_leds(void) {
-	// 1. Configuro los puertos para los LEDs.
-	/* Los configuro como salida */
-	DDRB |= (1 << DDB5);
-	DDRC |= (1 << DDC4) | (1 << DDC5);
-	
-	/* Por defecto deben estar apagados */
-	APAGAR_LED(PORTB, PORTB5);
-	APAGAR_LED(PORTC, PORTC4); APAGAR_LED(PORTC, PORTC5);
-}
-
 void init_ports_display(void) {
 	// 2. Configuro los puertos para el DISPLAY LED
 	/* Los configuro como salida */
@@ -74,6 +63,8 @@ int main(void) {
 	char pkey;
 	uint8_t flag_key;
 	LCDclr();
+	
+	uint8_t status_leds;
 	while (1)
 	{
 		if(flag10ms == 1)
@@ -84,7 +75,10 @@ int main(void) {
 			flag_key = KEYPAD_Scan(&pkey);
 			
 			// Actualizar el estado de la máquina (La MEF se encarga de ignorar la tecla si flag_key es 0).
-			actualizarMEF(flag_key, pkey);
+			actualizarMEF(flag_key, pkey, &status_leds);
+			
+			// Actualizar el estado de los leds
+			actualizarLEDS(status_leds);
 			
 			// actualizar salidas (Siempre, en cada tick).
 			LCDGotoXY(1,1);

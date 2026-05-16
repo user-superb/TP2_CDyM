@@ -9,8 +9,7 @@ MEF.d MEF.o: .././MEF.c .././MEF.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\common.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\version.h \
  c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h \
- c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h \
- .././led.h
+ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h
 
 .././MEF.h:
 
@@ -35,5 +34,3 @@ c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\version.h:
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\fuse.h:
 
 c:\program\ files\microchip\xc8\v2.31\avr\avr\include\avr\lock.h:
-
-.././led.h:

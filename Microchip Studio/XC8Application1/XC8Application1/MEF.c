@@ -5,8 +5,6 @@
 #define false 0
 #include "MEF.h"
 
-#include "led.h"
-
 //Enumerativo de estados.
 typedef enum {INICIAL,INGRESO,COCINANDO,PARADO,FIN}ESTADO;
 ESTADO est_actual;
@@ -14,7 +12,7 @@ ESTADO est_actual;
 static int clear,keypad_flag,start,stop,fin,inicioRapido,puerta;
 //¡SALIDAS MEF!
 static int number;
-static int LED1,LED2,LED3;
+static uint8_t LEDS;
 static uint8_t ticks;
 //var buffer
 static char keypad_out[6];
@@ -25,13 +23,14 @@ static int ciclo_fin;
 static int isNumber;
 void iniciarMEF()
 {
-	
 	est_actual=INICIAL;
 	contador = 0;
 	number = 0;
 	ticks = 0;
+	
+	LEDS = 0;
 }
-void actualizarMEF(uint8_t kf, uint8_t pkey)
+void actualizarMEF(uint8_t kf, uint8_t pkey, uint8_t* status_leds)
 {
 	// LEER ENTRADAS
 	if (kf != 0) {
@@ -64,8 +63,7 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 			} else if(inicioRapido == true) {
 				number = 30;
 				est_actual = COCINANDO;
-				PRENDER_LED(PORTB, PORTB5);
-				PRENDER_LED(PORTC, PORTC4);
+				LEDS |= 0x03; // Prender LEDs 1 y 2
 			} 
 			else if(isNumber == true) {
 			est_actual = INGRESO;
@@ -77,8 +75,7 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 		if (keypad_flag == true) {
 			if (start == true) {
 				est_actual = COCINANDO;
-				PRENDER_LED(PORTB, PORTB5);
-				PRENDER_LED(PORTC, PORTC4);
+				LEDS |= 0x03; // Prender LEDs 1 y 2
 				} else if (clear == true) {
 				number = 0;
 				contador = 0;
@@ -102,8 +99,7 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 				}
 				number = (min * 100) + seg;
 				est_actual = COCINANDO;
-				PRENDER_LED(PORTB, PORTB5);
-				PRENDER_LED(PORTC, PORTC4);
+				LEDS |= 0x03; // Prender LEDs 1 y 2
 			}
 		}
 		break;
@@ -111,7 +107,7 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 		case COCINANDO:
 			if (stop) {
 				est_actual = PARADO;
-				APAGAR_LED(PORTB, PORTB5);
+				LEDS &= ~0x01; // Apagar LED 1
 				break;
 			}
 			if (fin) {
@@ -161,6 +157,7 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 			
 				if (number == 0) {
 					est_actual = FIN;
+					LEDS |= 0x04; // Prendo el LED 4
 				}
 			}
 			break;
@@ -168,14 +165,13 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 		case PARADO:
 		if (start) {
 			est_actual = COCINANDO;
-			PRENDER_LED(PORTB, PORTB5);
+			LEDS |= 0x01;
 		}
 		if (isNumber) est_actual = INGRESO;
 		if (clear) {
 			number = 0; // Agrego esto por seguridad al limpiar
 			est_actual = INICIAL;
-			APAGAR_LED(PORTB, PORTB5);
-			APAGAR_LED(PORTC, PORTC4);
+			LEDS &= ~0x03; // Apagar los LEDs 1 y 2
 		}
 		if(inicioRapido)
 		{
@@ -194,10 +190,19 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 		break;
 		
 		case FIN:
-			APAGAR_LED(PORTB, PORTB5);
-			APAGAR_LED(PORTC, PORTC4);
-			if (keypad_flag || ciclo_fin == 5) {est_actual = INICIAL;}
-			if (ticks == 100){
+			LEDS &= ~0x03; // Me aseguro que el magnetrón y la luz interior estén apagadas
+			
+			// El LED 3 alterna cada 50 ticks.
+			if (ticks == 50 || ticks == 100) {
+				LEDS ^= 0x04;
+			}
+			
+			if (keypad_flag || ciclo_fin == 5) {
+				est_actual = INICIAL;
+				LEDS &= ~0x04; // Apago todo cuando paso al estado inicial
+			}
+			
+			if (ticks >= 100){
 				ciclo_fin++;
 				ticks = 0;
 			}
@@ -213,6 +218,9 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 	start = false;
 	stop = false;
 	clear = false;
+	
+	// Actualizo el estado de los LEDs
+	*status_leds = LEDS;
 }
 
 char* actualizarSalida()
@@ -220,7 +228,6 @@ char* actualizarSalida()
 	switch (est_actual) {
 		case INICIAL:
 		snprintf(keypad_out, sizeof(keypad_out), "00:00");
-		APAGAR_LED(PORTC, PORTC5); // Me aseguro que LED3 esté apagado en el estado inicial
 		break;
 		
 		case INGRESO:
@@ -230,6 +237,7 @@ char* actualizarSalida()
 		
 		case COCINANDO:
 		snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d", number / 100, number % 100);
+		break;
 		
 		case PARADO:
 		snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d", number / 100, number % 100);
@@ -238,11 +246,9 @@ char* actualizarSalida()
 		case FIN:
 		if (ticks < 50) {
 			snprintf(keypad_out, sizeof(keypad_out), "FIN  ");
-			PRENDER_LED(PORTC, PORTC5);
 		}
 		else {
 			snprintf(keypad_out, sizeof(keypad_out), "     ");
-			APAGAR_LED(PORTC, PORTC5);
 		}
 		break;
 	}

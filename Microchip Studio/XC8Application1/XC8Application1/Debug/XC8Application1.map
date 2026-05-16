@@ -39,9 +39,6 @@ Discarded input sections
  .text          0x0000000000000000        0x0 led.o
  .data          0x0000000000000000        0x0 led.o
  .bss           0x0000000000000000        0x0 led.o
- .debug_line    0x0000000000000000        0x0 led.o
- .debug_str     0x0000000000000000        0x0 led.o
- .comment       0x0000000000000000       0x30 led.o
  .text          0x0000000000000000        0x0 MEF.o
  .data          0x0000000000000000        0x0 MEF.o
  .bss           0x0000000000000000        0x0 MEF.o
@@ -481,8 +478,9 @@ END GROUP
 
 .comment        0x0000000000000000       0x5b
  *(.comment)
- .comment       0x0000000000000000       0x2f MEF.o
+ .comment       0x0000000000000000       0x2f led.o
                                          0x30 (size before relaxing)
+ .comment       0x000000000000002f       0x30 MEF.o
  .comment       0x000000000000002f       0x30 keypad.o
  .comment       0x000000000000002f       0x30 lcd.o
  .comment       0x000000000000002f       0x30 main.o
@@ -508,65 +506,73 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0x168
+.debug_aranges  0x0000000000000000      0x188
  *(.debug_aranges)
  .debug_aranges
-                0x0000000000000000       0x30 MEF.o
+                0x0000000000000000       0x28 led.o
  .debug_aranges
-                0x0000000000000030       0x28 keypad.o
+                0x0000000000000028       0x30 MEF.o
  .debug_aranges
-                0x0000000000000058       0xc0 lcd.o
+                0x0000000000000058       0x28 keypad.o
  .debug_aranges
-                0x0000000000000118       0x50 main.o
+                0x0000000000000080       0xc0 lcd.o
+ .debug_aranges
+                0x0000000000000140       0x48 main.o
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x22ed
+.debug_info     0x0000000000000000     0x25e0
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x5f4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
- .debug_info    0x00000000000005f4      0x537 MEF.o
- .debug_info    0x0000000000000b2b      0x4b1 keypad.o
- .debug_info    0x0000000000000fdc      0xe32 lcd.o
- .debug_info    0x0000000000001e0e      0x4df main.o
+ .debug_info    0x00000000000005f4      0x2c1 led.o
+ .debug_info    0x00000000000008b5      0x542 MEF.o
+ .debug_info    0x0000000000000df7      0x4b1 keypad.o
+ .debug_info    0x00000000000012a8      0xe32 lcd.o
+ .debug_info    0x00000000000020da      0x506 main.o
 
-.debug_abbrev   0x0000000000000000      0xb96
+.debug_abbrev   0x0000000000000000      0xc03
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x5a2 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
- .debug_abbrev  0x00000000000005a2      0x130 MEF.o
- .debug_abbrev  0x00000000000006d2      0x137 keypad.o
- .debug_abbrev  0x0000000000000809      0x234 lcd.o
- .debug_abbrev  0x0000000000000a3d      0x159 main.o
+ .debug_abbrev  0x00000000000005a2       0x6d led.o
+ .debug_abbrev  0x000000000000060f      0x130 MEF.o
+ .debug_abbrev  0x000000000000073f      0x137 keypad.o
+ .debug_abbrev  0x0000000000000876      0x234 lcd.o
+ .debug_abbrev  0x0000000000000aaa      0x159 main.o
 
-.debug_line     0x0000000000000000      0xfc5
+.debug_line     0x0000000000000000     0x1082
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x137 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
- .debug_line    0x0000000000000137      0x3e6 MEF.o
- .debug_line    0x000000000000051d      0x2b0 keypad.o
- .debug_line    0x00000000000007cd      0x639 lcd.o
- .debug_line    0x0000000000000e06      0x1bf main.o
+ .debug_line    0x0000000000000137       0xd5 led.o
+ .debug_line    0x000000000000020c      0x3e8 MEF.o
+ .debug_line    0x00000000000005f4      0x2b0 keypad.o
+ .debug_line    0x00000000000008a4      0x639 lcd.o
+ .debug_line    0x0000000000000edd      0x1a5 main.o
 
-.debug_frame    0x0000000000000000      0x3c8
+.debug_frame    0x0000000000000000      0x3ec
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0xb0 MEF.o
- .debug_frame   0x00000000000000b0       0x50 keypad.o
- .debug_frame   0x0000000000000100      0x224 lcd.o
- .debug_frame   0x0000000000000324       0xa4 main.o
+ .debug_frame   0x0000000000000000       0x34 led.o
+ .debug_frame   0x0000000000000034       0xb0 MEF.o
+ .debug_frame   0x00000000000000e4       0x50 keypad.o
+ .debug_frame   0x0000000000000134      0x224 lcd.o
+ .debug_frame   0x0000000000000358       0x94 main.o
 
-.debug_str      0x0000000000000000      0x28a
+.debug_str      0x0000000000000000      0x2a9
  *(.debug_str)
  .debug_str     0x0000000000000000      0x208 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+ .debug_str     0x0000000000000208        0x0 led.o
  .debug_str     0x0000000000000208        0x0 MEF.o
  .debug_str     0x0000000000000208        0x0 keypad.o
  .debug_str     0x0000000000000208       0x38 lcd.o
- .debug_str     0x0000000000000240       0x4a main.o
+ .debug_str     0x0000000000000240       0x69 main.o
 
-.debug_loc      0x0000000000000000     0x1369
+.debug_loc      0x0000000000000000     0x142b
  *(.debug_loc)
- .debug_loc     0x0000000000000000      0x378 MEF.o
- .debug_loc     0x0000000000000378      0x1eb keypad.o
- .debug_loc     0x0000000000000563      0xd6f lcd.o
- .debug_loc     0x00000000000012d2       0x97 main.o
+ .debug_loc     0x0000000000000000       0x3a led.o
+ .debug_loc     0x000000000000003a      0x400 MEF.o
+ .debug_loc     0x000000000000043a      0x1eb keypad.o
+ .debug_loc     0x0000000000000625      0xd6f lcd.o
+ .debug_loc     0x0000000000001394       0x97 main.o
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -586,12 +592,13 @@ END GROUP
 .debug_pubtypes
  *(.debug_pubtypes)
 
-.debug_ranges   0x0000000000000000      0x128
+.debug_ranges   0x0000000000000000      0x138
  *(.debug_ranges)
- .debug_ranges  0x0000000000000000       0x20 MEF.o
- .debug_ranges  0x0000000000000020       0x18 keypad.o
- .debug_ranges  0x0000000000000038       0xb0 lcd.o
- .debug_ranges  0x00000000000000e8       0x40 main.o
+ .debug_ranges  0x0000000000000000       0x18 led.o
+ .debug_ranges  0x0000000000000018       0x20 MEF.o
+ .debug_ranges  0x0000000000000038       0x18 keypad.o
+ .debug_ranges  0x0000000000000050       0xb0 lcd.o
+ .debug_ranges  0x0000000000000100       0x38 main.o
 
 .debug_macro
  *(.debug_macro)
@@ -622,6 +629,9 @@ LOAD data_init
 .bss.ticks      0x000000000080012b        0x1
  .bss.ticks     0x000000000080012b        0x1 MEF.o
 
+.bss.LEDS       0x000000000080012c        0x1
+ .bss.LEDS      0x000000000080012c        0x1 MEF.o
+
 .bss.number     0x000000000080011d        0x2
  .bss.number    0x000000000080011d        0x2 MEF.o
 
@@ -648,13 +658,13 @@ LOAD data_init
  .bss.clear     0x0000000000800129        0x2 MEF.o
 
 .bss.Old_key.1737
-                0x000000000080012d        0x1
+                0x000000000080012e        0x1
  .bss.Old_key.1737
-                0x000000000080012d        0x1 keypad.o
+                0x000000000080012e        0x1 keypad.o
 
-.bss.flag10ms   0x000000000080012e        0x1
- .bss.flag10ms  0x000000000080012e        0x1 main.o
-                0x000000000080012e                flag10ms
+.bss.flag10ms   0x000000000080012f        0x1
+ .bss.flag10ms  0x000000000080012f        0x1 main.o
+                0x000000000080012f                flag10ms
 
 .progmemx.data.LcdCustomChar
                 0x00000000000000da       0x40
@@ -667,194 +677,200 @@ LOAD data_init
                 0x000000000000011a       0x1c MEF.o
 
 .text.actualizarMEF
-                0x0000000000000136      0x538
+                0x0000000000000136      0x564
  .text.actualizarMEF
-                0x0000000000000136      0x538 MEF.o
+                0x0000000000000136      0x564 MEF.o
                 0x0000000000000136                actualizarMEF
 
-.text.avrlibc   0x000000000000066e      0x448
- .text.avrlibc  0x000000000000066e      0x448 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o)
-                0x000000000000066e                vfprintf
+.text.avrlibc   0x000000000000069a      0x448
+ .text.avrlibc  0x000000000000069a      0x448 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(vfprintf_std.o)
+                0x000000000000069a                vfprintf
 
 .text.leerTeclado
-                0x0000000000000ab6      0x16a
+                0x0000000000000ae2      0x16a
  .text.leerTeclado
-                0x0000000000000ab6      0x16a keypad.o
-                0x0000000000000ab6                leerTeclado
+                0x0000000000000ae2      0x16a keypad.o
+                0x0000000000000ae2                leerTeclado
 
 .text.actualizarSalida
-                0x0000000000000c20      0x152
+                0x0000000000000c4c      0x142
  .text.actualizarSalida
-                0x0000000000000c20      0x152 MEF.o
-                0x0000000000000c20                actualizarSalida
+                0x0000000000000c4c      0x142 MEF.o
+                0x0000000000000c4c                actualizarSalida
 
 .text.LCDsendChar
-                0x0000000000000d72      0x130
+                0x0000000000000d8e      0x130
  .text.LCDsendChar
-                0x0000000000000d72      0x130 lcd.o
-                0x0000000000000d72                LCDsendChar
+                0x0000000000000d8e      0x130 lcd.o
+                0x0000000000000d8e                LCDsendChar
 
 .text.LCDsendCommand
-                0x0000000000000ea2      0x128
+                0x0000000000000ebe      0x128
  .text.LCDsendCommand
-                0x0000000000000ea2      0x128 lcd.o
-                0x0000000000000ea2                LCDsendCommand
+                0x0000000000000ebe      0x128 lcd.o
+                0x0000000000000ebe                LCDsendCommand
 
-.text.LCDinit   0x0000000000000fca      0x100
- .text.LCDinit  0x0000000000000fca      0x100 lcd.o
-                0x0000000000000fca                LCDinit
+.text.LCDinit   0x0000000000000fe6      0x100
+ .text.LCDinit  0x0000000000000fe6      0x100 lcd.o
+                0x0000000000000fe6                LCDinit
 
-.text.avrlibc   0x00000000000010ca       0xbc
- .text.avrlibc  0x00000000000010ca       0xbc c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ultoa_invert.o)
-                0x00000000000010ca                __ultoa_invert
+.text.avrlibc   0x00000000000010e6       0xbc
+ .text.avrlibc  0x00000000000010e6       0xbc c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(ultoa_invert.o)
+                0x00000000000010e6                __ultoa_invert
 
-.text.avrlibc   0x0000000000001186       0x78
- .text.avrlibc  0x0000000000001186       0x78 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(fputc.o)
-                0x0000000000001186                fputc
+.text.avrlibc   0x00000000000011a2       0x78
+ .text.avrlibc  0x00000000000011a2       0x78 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(fputc.o)
+                0x00000000000011a2                fputc
 
 .text.LCDdefinechar
-                0x00000000000011fe       0x6a
+                0x000000000000121a       0x6a
  .text.LCDdefinechar
-                0x00000000000011fe       0x6a lcd.o
-                0x00000000000011fe                LCDdefinechar
+                0x000000000000121a       0x6a lcd.o
+                0x000000000000121a                LCDdefinechar
 
-.text.avrlibc   0x0000000000001268       0x62
- .text.avrlibc  0x0000000000001268       0x62 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(snprintf.o)
-                0x0000000000001268                snprintf
+.text.main      0x0000000000001284       0x62
+ .text.main     0x0000000000001284       0x62 main.o
+                0x0000000000001284                main
 
-.text.main      0x00000000000012ca       0x56
- .text.main     0x00000000000012ca       0x56 main.o
-                0x00000000000012ca                main
+.text.avrlibc   0x00000000000012e6       0x62
+ .text.avrlibc  0x00000000000012e6       0x62 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(snprintf.o)
+                0x00000000000012e6                snprintf
 
 .text.KEYPAD_Scan
-                0x0000000000001320       0x40
+                0x0000000000001348       0x40
  .text.KEYPAD_Scan
-                0x0000000000001320       0x40 keypad.o
-                0x0000000000001320                KEYPAD_Scan
+                0x0000000000001348       0x40 keypad.o
+                0x0000000000001348                KEYPAD_Scan
+
+.text.actualizarLEDS
+                0x0000000000001388       0x38
+ .text.actualizarLEDS
+                0x0000000000001388       0x38 led.o
+                0x0000000000001388                actualizarLEDS
 
 .text.libgcc.prologue
-                0x0000000000001360       0x38
+                0x00000000000013c0       0x38
  .text.libgcc.prologue
-                0x0000000000001360       0x38 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
-                0x0000000000001360                __prologue_saves__
+                0x00000000000013c0       0x38 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_prologue.o)
+                0x00000000000013c0                __prologue_saves__
 
-.text.avrlibc   0x0000000000001398       0x36
- .text.avrlibc  0x0000000000001398       0x36 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strnlen_M.o)
-                0x0000000000001398                strnlen
+.text.avrlibc   0x00000000000013f8       0x36
+ .text.avrlibc  0x00000000000013f8       0x36 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(strnlen_M.o)
+                0x00000000000013f8                strnlen
 
 .text.libgcc.prologue
-                0x00000000000013ce       0x36
+                0x000000000000142e       0x36
  .text.libgcc.prologue
-                0x00000000000013ce       0x36 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
-                0x00000000000013ce                __epilogue_restores__
+                0x000000000000142e       0x36 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_epilogue.o)
+                0x000000000000142e                __epilogue_restores__
 
-.text.avrlibc   0x0000000000001404       0x32
- .text.avrlibc  0x0000000000001404       0x32 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(memcpy_M.o)
-                0x0000000000001404                memcpy
+.text.avrlibc   0x0000000000001464       0x32
+ .text.avrlibc  0x0000000000001464       0x32 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/../../../../avr/lib/avr5/memx-const\libc.a(memcpy_M.o)
+                0x0000000000001464                memcpy
 
 .text.LCDstring
-                0x0000000000001436       0x30
+                0x0000000000001496       0x30
  .text.LCDstring
-                0x0000000000001436       0x30 lcd.o
-                0x0000000000001436                LCDstring
+                0x0000000000001496       0x30 lcd.o
+                0x0000000000001496                LCDstring
 
 .text.libgcc.div
-                0x0000000000001466       0x28
+                0x00000000000014c6       0x28
  .text.libgcc.div
-                0x0000000000001466       0x28 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
-                0x0000000000001466                _div
-                0x0000000000001466                __divmodhi4
+                0x00000000000014c6       0x28 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_divmodhi4.o)
+                0x00000000000014c6                _div
+                0x00000000000014c6                __divmodhi4
 
 .text.libgcc.div
-                0x000000000000148e       0x28
+                0x00000000000014ee       0x28
  .text.libgcc.div
-                0x000000000000148e       0x28 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodhi4.o)
-                0x000000000000148e                __udivmodhi4
+                0x00000000000014ee       0x28 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_udivmodhi4.o)
+                0x00000000000014ee                __udivmodhi4
 
 .text.init_ports_keypad
-                0x00000000000014b6       0x26
+                0x0000000000001516       0x26
  .text.init_ports_keypad
-                0x00000000000014b6       0x26 main.o
-                0x00000000000014b6                init_ports_keypad
+                0x0000000000001516       0x26 main.o
+                0x0000000000001516                init_ports_keypad
 
 .text.init_ports_leds
-                0x00000000000014dc       0x20
+                0x000000000000153c       0x20
  .text.init_ports_leds
-                0x00000000000014dc       0x20 main.o
-                0x00000000000014dc                init_ports_leds
-
-.text.LCDGotoXY
-                0x00000000000014fc       0x1e
- .text.LCDGotoXY
-                0x00000000000014fc       0x1e lcd.o
-                0x00000000000014fc                LCDGotoXY
-
-.text.__vector_14
-                0x000000000000151a       0x1e
- .text.__vector_14
-                0x000000000000151a       0x1e main.o
-                0x000000000000151a                __vector_14
-
-.text.init_timer
-                0x0000000000001538       0x1c
- .text.init_timer
-                0x0000000000001538       0x1c main.o
-                0x0000000000001538                init_timer
+                0x000000000000153c       0x20 led.o
+                0x000000000000153c                init_ports_leds
 
 .text.iniciarMEF
-                0x0000000000001554       0x1a
+                0x000000000000155c       0x1e
  .text.iniciarMEF
-                0x0000000000001554       0x1a MEF.o
-                0x0000000000001554                iniciarMEF
+                0x000000000000155c       0x1e MEF.o
+                0x000000000000155c                iniciarMEF
+
+.text.LCDGotoXY
+                0x000000000000157a       0x1e
+ .text.LCDGotoXY
+                0x000000000000157a       0x1e lcd.o
+                0x000000000000157a                LCDGotoXY
+
+.text.__vector_14
+                0x0000000000001598       0x1e
+ .text.__vector_14
+                0x0000000000001598       0x1e main.o
+                0x0000000000001598                __vector_14
+
+.text.init_timer
+                0x00000000000015b6       0x1c
+ .text.init_timer
+                0x00000000000015b6       0x1c main.o
+                0x00000000000015b6                init_timer
 
 .text.init_ports_display
-                0x000000000000156e       0x14
+                0x00000000000015d2       0x14
  .text.init_ports_display
-                0x000000000000156e       0x14 main.o
-                0x000000000000156e                init_ports_display
+                0x00000000000015d2       0x14 main.o
+                0x00000000000015d2                init_ports_display
 
 .text.init_ports
-                0x0000000000001582        0xe
+                0x00000000000015e6        0xe
  .text.init_ports
-                0x0000000000001582        0xe main.o
-                0x0000000000001582                init_ports
+                0x00000000000015e6        0xe main.o
+                0x00000000000015e6                init_ports
 
-.text.LCDclr    0x0000000000001590        0x8
- .text.LCDclr   0x0000000000001590        0x8 lcd.o
-                0x0000000000001590                LCDclr
+.text.LCDclr    0x00000000000015f4        0x8
+ .text.LCDclr   0x00000000000015f4        0x8 lcd.o
+                0x00000000000015f4                LCDclr
 
-.text           0x0000000000001598        0x4
- .text          0x0000000000001598        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
-                0x0000000000001598                __vector_22
-                0x0000000000001598                __vector_1
-                0x0000000000001598                __vector_24
-                0x0000000000001598                __vector_12
-                0x0000000000001598                __bad_interrupt
-                0x0000000000001598                __vector_6
-                0x0000000000001598                __vector_3
-                0x0000000000001598                __vector_23
-                0x0000000000001598                __vector_25
-                0x0000000000001598                __vector_11
-                0x0000000000001598                __vector_13
-                0x0000000000001598                __vector_17
-                0x0000000000001598                __vector_19
-                0x0000000000001598                __vector_7
-                0x0000000000001598                __vector_5
-                0x0000000000001598                __vector_4
-                0x0000000000001598                __vector_9
-                0x0000000000001598                __vector_2
-                0x0000000000001598                __vector_21
-                0x0000000000001598                __vector_15
-                0x0000000000001598                __vector_8
-                0x0000000000001598                __vector_10
-                0x0000000000001598                __vector_16
-                0x0000000000001598                __vector_18
-                0x0000000000001598                __vector_20
+.text           0x00000000000015fc        0x4
+ .text          0x00000000000015fc        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega328p.o
+                0x00000000000015fc                __vector_22
+                0x00000000000015fc                __vector_1
+                0x00000000000015fc                __vector_24
+                0x00000000000015fc                __vector_12
+                0x00000000000015fc                __bad_interrupt
+                0x00000000000015fc                __vector_6
+                0x00000000000015fc                __vector_3
+                0x00000000000015fc                __vector_23
+                0x00000000000015fc                __vector_25
+                0x00000000000015fc                __vector_11
+                0x00000000000015fc                __vector_13
+                0x00000000000015fc                __vector_17
+                0x00000000000015fc                __vector_19
+                0x00000000000015fc                __vector_7
+                0x00000000000015fc                __vector_5
+                0x00000000000015fc                __vector_4
+                0x00000000000015fc                __vector_9
+                0x00000000000015fc                __vector_2
+                0x00000000000015fc                __vector_21
+                0x00000000000015fc                __vector_15
+                0x00000000000015fc                __vector_8
+                0x00000000000015fc                __vector_10
+                0x00000000000015fc                __vector_16
+                0x00000000000015fc                __vector_18
+                0x00000000000015fc                __vector_20
 
-.rodata         0x0000000000800101       0x10 load address 0x000000000000159c
+.rodata         0x0000000000800101       0x10 load address 0x0000000000001600
  .rodata        0x0000000000800101       0x10 keypad.o
 
 .data.Last_valid_key.1738
-                0x000000000080012c        0x1 load address 0x00000000000015ac
+                0x000000000080012d        0x1 load address 0x0000000000001610
  .data.Last_valid_key.1738
-                0x000000000080012c        0x1 keypad.o
+                0x000000000080012d        0x1 keypad.o
