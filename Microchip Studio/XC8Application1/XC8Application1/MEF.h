@@ -11,5 +11,5 @@
 #endif /* MEF_H_ */
 void iniciarMEF();
 //char * actualizarMEF(uint8_t kf, uint8_t pkey);
-void actualizarMEF(uint8_t kf, uint8_t pkey, uint8_t* status_leds);
-char * actualizarSalida();
+void actualizarMEF(uint8_t kf, uint8_t pkey);
+char * actualizarSalida(uint8_t* status_leds);

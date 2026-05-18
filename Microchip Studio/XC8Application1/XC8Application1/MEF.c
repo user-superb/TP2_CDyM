@@ -27,43 +27,49 @@ void iniciarMEF()
 	contador = 0;
 	number = 0;
 	ticks = 0;
-	
+	puerta = false;
 	LEDS = 0;
 }
-void actualizarMEF(uint8_t kf, uint8_t pkey, uint8_t* status_leds)
+void actualizarMEF(uint8_t kf, uint8_t pkey)
 {
 	// LEER ENTRADAS
 	if (kf != 0) {
 		keypad_flag = true;
 		switch (pkey) {
-			case('A'): start = true; stop = false; fin = false; inicioRapido = false; puerta = false; clear = false; isNumber = false; break;
-			case('B'): start = false; stop = true; fin = false; inicioRapido = false; puerta = false; clear = true; isNumber = false; break;
-			case('C'): start = false; stop = false; fin = false; inicioRapido = true; puerta = false; clear = false; isNumber = false; break;
-			case('D'): start = false; stop = true; fin = false; inicioRapido = false; puerta = false; clear = false; isNumber = false; break;
+			case('A'): start = true; stop = false; fin = false; inicioRapido = false; puerta = puerta; clear = false; isNumber = false; break;
+			case('B'): start = false; stop = true; fin = false; inicioRapido = false; puerta = puerta; clear = true; isNumber = false; break;
+			case('C'): start = false; stop = false; fin = false; inicioRapido = true; puerta = puerta; clear = false; isNumber = false; break;
+			case('D'): start = false; stop = true; fin = false; inicioRapido = false; puerta = !(puerta); clear = false; isNumber = false; break;
 			case('*'): break;
 			case('#'): break;
 			default: // Número
 			isNumber = true;
 			if (est_actual == COCINANDO)
 				return;
+			if (est_actual == PARADO)
+				return;
 			if (pkey >= '0' && pkey <= '9') {
 				number = number * 10 + (pkey - '0');
 			}
-			start = false; stop = false; fin = false; inicioRapido = false; puerta = false; clear = false;
+			start = false; stop = false; fin = false; inicioRapido = false; clear = false;
 			break;
 		}
 	}
 
 	// ACTUALIZAR ESTADOS (Limpiado de snprintf y returns)
+	if(puerta)
+	{
+		est_actual = PARADO;
+		return;
+	}
 	switch (est_actual) {
 		case INICIAL:
 		ciclo_fin = 0;
-		if(start) {
+		if(start && (number != 0)) {
 			est_actual = COCINANDO;
 			} else if(inicioRapido == true) {
 				number = 30;
 				est_actual = COCINANDO;
-				LEDS |= 0x03; // Prender LEDs 1 y 2
 			} 
 			else if(isNumber == true) {
 			est_actual = INGRESO;
@@ -73,7 +79,7 @@ void actualizarMEF(uint8_t kf, uint8_t pkey, uint8_t* status_leds)
 		
 		case INGRESO:
 		if (keypad_flag == true) {
-			if (start == true) {
+			if (start == true && puerta == false) {
 				est_actual = COCINANDO;
 				LEDS |= 0x03; // Prender LEDs 1 y 2
 				} else if (clear == true) {
@@ -99,15 +105,15 @@ void actualizarMEF(uint8_t kf, uint8_t pkey, uint8_t* status_leds)
 				}
 				number = (min * 100) + seg;
 				est_actual = COCINANDO;
-				LEDS |= 0x03; // Prender LEDs 1 y 2
 			}
 		}
 		break;
 		
 		case COCINANDO:
+			if (puerta == true)
+				est_actual = PARADO;
 			if (stop) {
 				est_actual = PARADO;
-				LEDS &= ~0x01; // Apagar LED 1
 				break;
 			}
 			if (fin) {
@@ -157,21 +163,25 @@ void actualizarMEF(uint8_t kf, uint8_t pkey, uint8_t* status_leds)
 			
 				if (number == 0) {
 					est_actual = FIN;
-					LEDS |= 0x04; // Prendo el LED 4
 				}
 			}
 			break;
 		
 		case PARADO:
-		if (start) {
+		if (start && (puerta == false)) {
 			est_actual = COCINANDO;
-			LEDS |= 0x01;
 		}
-		if (isNumber) est_actual = INGRESO;
+		if (isNumber) 
+		{
+			number=0;
+			contador=0;
+			est_actual = INICIAL;
+		}
+			
 		if (clear) {
+			contador = 0;
 			number = 0; // Agrego esto por seguridad al limpiar
 			est_actual = INICIAL;
-			LEDS &= ~0x03; // Apagar los LEDs 1 y 2
 		}
 		if(inicioRapido)
 		{
@@ -189,17 +199,9 @@ void actualizarMEF(uint8_t kf, uint8_t pkey, uint8_t* status_leds)
 		
 		break;
 		
-		case FIN:
-			LEDS &= ~0x03; // Me aseguro que el magnetrón y la luz interior estén apagadas
-			
-			// El LED 3 alterna cada 50 ticks.
-			if (ticks == 50 || ticks == 100) {
-				LEDS ^= 0x04;
-			}
-			
+		case FIN:			
 			if (keypad_flag || ciclo_fin == 5) {
 				est_actual = INICIAL;
-				LEDS &= ~0x04; // Apago todo cuando paso al estado inicial
 			}
 			
 			if (ticks >= 100){
@@ -218,16 +220,14 @@ void actualizarMEF(uint8_t kf, uint8_t pkey, uint8_t* status_leds)
 	start = false;
 	stop = false;
 	clear = false;
-	
-	// Actualizo el estado de los LEDs
-	*status_leds = LEDS;
 }
 
-char* actualizarSalida()
+char* actualizarSalida(uint8_t* status_leds)
 {
 	switch (est_actual) {
 		case INICIAL:
 		snprintf(keypad_out, sizeof(keypad_out), "00:00");
+		LEDS &= 0x00; // -- Apago todos los LEDs
 		break;
 		
 		case INGRESO:
@@ -237,20 +237,28 @@ char* actualizarSalida()
 		
 		case COCINANDO:
 		snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d", number / 100, number % 100);
+		LEDS |= 0x03; // -- Prendo todos los LEDs
 		break;
 		
 		case PARADO:
 		snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d", number / 100, number % 100);
+		LEDS &= ~0x01; // -- Apago el MAGNETRON (LED 1)
 		break;
 
-		case FIN:
+		case FIN: // -- Alterno el LED 3
 		if (ticks < 50) {
 			snprintf(keypad_out, sizeof(keypad_out), "FIN  ");
+			LEDS = 0x04;
 		}
 		else {
 			snprintf(keypad_out, sizeof(keypad_out), "     ");
+			LEDS = 0x00;
 		}
 		break;
 	}
+	
+	// Actualizo el estado de los LEDs
+	*status_leds = LEDS;
+	
 	return keypad_out;
 }

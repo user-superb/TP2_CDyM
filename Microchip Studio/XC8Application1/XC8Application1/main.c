@@ -75,14 +75,14 @@ int main(void) {
 			flag_key = KEYPAD_Scan(&pkey);
 			
 			// Actualizar el estado de la máquina (La MEF se encarga de ignorar la tecla si flag_key es 0).
-			actualizarMEF(flag_key, pkey, &status_leds);
-			
-			// Actualizar el estado de los leds
-			actualizarLEDS(status_leds);
+			actualizarMEF(flag_key, pkey);
 			
 			// actualizar salidas (Siempre, en cada tick).
 			LCDGotoXY(1,1);
-			LCDstring(actualizarSalida(), 5);
+			LCDstring(actualizarSalida(&status_leds), 5);
+			
+			// Actualizar el estado de los leds
+			actualizarLEDS(status_leds);
 		}
 	}
 }
