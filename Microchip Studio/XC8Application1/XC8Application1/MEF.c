@@ -6,7 +6,7 @@
 #include "MEF.h"
 
 //Enumerativo de estados.
-typedef enum {INICIAL,INGRESO,COCINANDO,PARADO,FIN}ESTADO;
+typedef enum {INICIAL,INGRESO,COCINANDO,PARADO,FIN,PUERTA_ABIERTA}ESTADO;
 ESTADO est_actual;
 //¡ENTRADAS MEF!
 static int clear,keypad_flag,start,stop,fin,inicioRapido,puerta;
@@ -15,7 +15,7 @@ static int number;
 static uint8_t LEDS;
 static uint8_t ticks;
 //var buffer
-static char keypad_out[6];
+static char keypad_out[7];
 //var contador
 static int contador;
 static int ciclo_fin;
@@ -44,6 +44,9 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 			case('#'): break;
 			default: // Número
 			isNumber = true;
+			//el microondas solo actualiza el número en los estados de ingreso o inicio
+			if (est_actual == PUERTA_ABIERTA)
+				return;
 			if (est_actual == COCINANDO)
 				return;
 			if (est_actual == PARADO)
@@ -57,22 +60,28 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 	}
 
 	// ACTUALIZAR ESTADOS (Limpiado de snprintf y returns)
-	if(puerta)
+	if(puerta) //esto debe hacerse independientemente del estado actual de la máquina.
 	{
-		est_actual = PARADO;
+		est_actual = PUERTA_ABIERTA;
 		return;
 	}
 	switch (est_actual) {
+		case PUERTA_ABIERTA:
+			if(puerta ==  false)
+			{
+				est_actual = PARADO; //si la puerta está cerrada, se vuelve al estado parado
+			}
+			break;
 		case INICIAL:
 		ciclo_fin = 0;
 		if(start && (number != 0)) {
-			est_actual = COCINANDO;
+			est_actual = COCINANDO; //si el número ingresado es distinto de 0 y se presionó la tecla A (start), el microondas cocina
 			} else if(inicioRapido == true) {
 				number = 30;
-				est_actual = COCINANDO;
+				est_actual = COCINANDO;//si se presionó el botón C (inicio rápido) se comienza a cocinar con +30 seg.
 			} 
 			else if(isNumber == true) {
-			est_actual = INGRESO;
+			est_actual = INGRESO; //si se detecta que se ingresó un número en el estado inicial, se pasa al estado de ingreso, ya que num != 0.
 			contador++;
 		}
 		break;
@@ -80,21 +89,20 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 		case INGRESO:
 		if (keypad_flag == true) {
 			if (start == true && puerta == false) {
-				est_actual = COCINANDO;
-				LEDS |= 0x03; // Prender LEDs 1 y 2
+				est_actual = COCINANDO; //se cocina si se presiona start y la puerta está cerrada (doble verificación)
 				} else if (clear == true) {
 				number = 0;
 				contador = 0;
-				est_actual = INICIAL;
+				est_actual = INICIAL; //si se presiona clear, vuelve al estado inicial.
 				} else if (isNumber == true) {
-				if (!((number == 0) && (contador == 0))) contador++;
+				if (!((number == 0) && (contador == 0))) contador++; //nos aseguramos que number esté dentro de la longitud del display del microondas
 				if (contador >= 5) { // tiene que estar en 5
 					contador = 0;
 					number = 0;
 				}
 				
 				}
-				else if(inicioRapido == true) {
+				else if(inicioRapido == true) { //sumamos los +30 del inicio rápido
 				int min = number / 100;
 				int seg = number % 100;
 				seg += 30;
@@ -110,20 +118,18 @@ void actualizarMEF(uint8_t kf, uint8_t pkey)
 		break;
 		
 		case COCINANDO:
-			if (puerta == true)
-				est_actual = PARADO;
 			if (stop) {
-				est_actual = PARADO;
+				est_actual = PARADO; //se presionó el botón de pausa
 				break;
 			}
 			if (fin) {
-				est_actual = FIN;
+				est_actual = FIN; //el contador llegó al fin.
 				break;
 			}
 			//aca actualiza por si el numero es invalido. Preferiria que se hiciera en el estado INGRESO, pero no me salio	
 			int min = number / 100;
 			int seg = number % 100;
-		
+			//lógica para el contador de segundos y minutos
 		
 			if(min > 59) min = 59;
 			if(seg > 59) seg = 59;
@@ -226,35 +232,39 @@ char* actualizarSalida(uint8_t* status_leds)
 {
 	switch (est_actual) {
 		case INICIAL:
-		snprintf(keypad_out, sizeof(keypad_out), "00:00");
+		snprintf(keypad_out, sizeof(keypad_out), "00:00 ");
 		LEDS &= 0x00; // -- Apago todos los LEDs
 		break;
 		
 		case INGRESO:
-		snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d", number / 100, number % 100);
+		snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d ", number / 100, number % 100);
 
 		break;
 		
 		case COCINANDO:
-		snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d", number / 100, number % 100);
+		snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d ", number / 100, number % 100);
 		LEDS |= 0x03; // -- Prendo todos los LEDs
 		break;
 		
 		case PARADO:
-		snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d", number / 100, number % 100);
+		snprintf(keypad_out, sizeof(keypad_out), "%02d:%02d ", number / 100, number % 100);
 		LEDS &= ~0x01; // -- Apago el MAGNETRON (LED 1)
 		break;
 
 		case FIN: // -- Alterno el LED 3
 		if (ticks < 50) {
-			snprintf(keypad_out, sizeof(keypad_out), "FIN  ");
+			snprintf(keypad_out, sizeof(keypad_out), "FIN   ");
 			LEDS = 0x04;
 		}
 		else {
-			snprintf(keypad_out, sizeof(keypad_out), "     ");
+			snprintf(keypad_out, sizeof(keypad_out), "      ");
 			LEDS = 0x00;
 		}
 		break;
+		case PUERTA_ABIERTA:
+			snprintf(keypad_out, sizeof(keypad_out), "PUERTA");
+			LEDS = 0x02;
+		break; 
 	}
 	
 	// Actualizo el estado de los LEDs

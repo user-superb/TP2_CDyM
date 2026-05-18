@@ -79,7 +79,7 @@ int main(void) {
 			
 			// actualizar salidas (Siempre, en cada tick).
 			LCDGotoXY(1,1);
-			LCDstring(actualizarSalida(&status_leds), 5);
+			LCDstring(actualizarSalida(&status_leds), 6);
 			
 			// Actualizar el estado de los leds
 			actualizarLEDS(status_leds);
